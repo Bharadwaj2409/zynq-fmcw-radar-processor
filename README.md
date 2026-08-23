@@ -3,8 +3,8 @@ FPGA FMCW Radar Signal Processing Engine
 A real-time, hardware-accelerated FMCW (Frequency-Modulated Continuous Wave) radar signal processing pipeline built on the Digilent Eclypse Z7 (AMD Zynq-7020 SoC).
 
 This project implements a heterogeneous architecture to process radar data: the FPGA fabric handles high-throughput 1D Range FFTs in real time, while the ARM Cortex-A9 processor manages DMA transfers, slow-time Doppler processing, and data streaming.
-Overview
 
+Overview
 FMCW radar signal processing requires fast Fourier transforms on incoming beat frequencies (fast-time) across multiple chirps, followed by a second FFT across the chirps (slow-time) to generate a Range-Doppler map.
 
 To prevent the processor from bottlenecking at high sampling rates, the fast-time Range FFT runs directly in programmable logic (PL). The resulting spectral frames are pushed into DDR3 memory using AXI DMA, allowing the processing system (PS) to perform Doppler extraction and downstream analytics.
