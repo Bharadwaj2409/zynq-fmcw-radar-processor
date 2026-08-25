@@ -214,6 +214,24 @@
             },
             "V4": {
                 "VT": "AC",
+                "BA": "0x40000000",
+                "HA": "0x40000FFF",
+                "BP": "AXI_LITE_GPIO_BASEADDR",
+                "HP": "AXI_LITE_GPIO_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_PmodGPIO_0_Reg0",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/PmodGPIO_0",
+                "SI": "AXI_LITE_GPIO",
+                "SS": "Reg0",
+                "SV": "digilentinc.com:IP:PmodGPIO:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V5": {
+                "VT": "AC",
                 "BA": "0x40400000",
                 "HA": "0x4040FFFF",
                 "BP": "C_BASEADDR",
@@ -227,6 +245,42 @@
                 "SI": "S_AXI_LITE",
                 "SS": "Reg",
                 "SV": "xilinx.com:ip:axi_dma:7.1",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
+                "BA": "0x41200000",
+                "HA": "0x4120FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_axi_gpio_0_Reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/axi_gpio_0",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_gpio:2.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V7": {
+                "VT": "AC",
+                "BA": "0x41210000",
+                "HA": "0x4121FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_axi_gpio_1_Reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/axi_gpio_1",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_gpio:2.0",
                 "TM": "both",
                 "TU": "register"
             }
@@ -247,6 +301,21 @@
             },
             {
                 "src": "V4",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V5",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V6",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V7",
                 "trg": "V2",
                 "EH": "2"
             }
