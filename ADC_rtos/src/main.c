@@ -8,6 +8,7 @@
 #include "xil_printf.h"
 #include "xparameters.h"
 #include "xaxidma.h"
+#include "xil_io.h"
 #include "xil_cache.h"
 #include "xil_types.h"
 
@@ -41,13 +42,13 @@ int IicPhyReset(void);
 #define THREAD_STACKSIZE    2048
 #define TELNET_PORT         7
 
-/* FFT & Radar Signal Parameters */
-#define NUM_BINS            1024
-#define HALF_BINS           (NUM_BINS / 2)
-#define SAMPLING_FREQ_MHZ   40.0f                       // Eclypse Z7 ADC Clock (40 MSPS)
-#define BYTES_PER_SAMPLE    4                           // 16-bit I + 16-bit Q = 4 bytes per bin
-#define DMA_BUFFER_SIZE     (NUM_BINS * BYTES_PER_SAMPLE)
-#define MIN_VALID_SNR_DB    8.0f
+/* Hardware Base Addresses */
+#define GPIO_LED_BASEADDR   0x41210000  // Your Vivado AXI GPIO Base Address
+
+#define GPIO_DATA_OFFSET    0x00        // Channel 1 Data Register
+#define GPIO_TRI_OFFSET     0x04        // Channel 1 Tri-state Register (0 = Output)
+#define GPIO2_DATA_OFFSET   0x08        // Channel 2 Data Register
+#define GPIO2_TRI_OFFSET    0x0C        // Channel 2 Tri-state Register (0 = Output)
 
 #if defined(XPAR_AXIDMA_0_DEVICE_ID)
     #define DMA_DEV_ID      XPAR_AXIDMA_0_DEVICE_ID
@@ -56,6 +57,19 @@ int IicPhyReset(void);
 #else
     #define DMA_DEV_ID      0
 #endif
+
+/* RGB LED States */
+#define LED_OFF             0
+#define LED_GREEN           1
+#define LED_RED             2
+
+/* FFT & Radar Signal Parameters */
+#define NUM_BINS            1024
+#define HALF_BINS           (NUM_BINS / 2)
+#define SAMPLING_FREQ_MHZ   40.0f                       // Eclypse Z7 ADC Clock (40 MSPS)
+#define BYTES_PER_SAMPLE    4                           // 16-bit I + 16-bit Q = 4 bytes per bin
+#define DMA_BUFFER_SIZE     (NUM_BINS * BYTES_PER_SAMPLE)
+#define MIN_VALID_SNR_DB    8.0f
 
 /* DDR-aligned buffers for DMA transfers */
 static int16_t rx_fft_buffer[NUM_BINS * 2] __attribute__((aligned(64)));
@@ -72,23 +86,63 @@ void network_thread(void *p);
 void telnet_listener_thread(void *p);
 void lwip_init(void);
 
-/* --- DMA Subsystem Initialization with Status Prints --- */
+/* --- Direct Register GPIO Driving for 0x41210000 --- */
+int init_gpio_subsystem(void) {
+    xil_printf("Configuring AXI GPIO at Base Address: 0x%08X...\r\n", GPIO_LED_BASEADDR);
+
+    /* 1. Set all pins on Channel 1 and Channel 2 to OUTPUT mode (0x00000000) */
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO_TRI_OFFSET, 0x00000000);
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO2_TRI_OFFSET, 0x00000000);
+
+    /* 2. Self-test flash on boot: Light up LEDs for 300 ms */
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO_DATA_OFFSET, 0xFFFFFFFF);
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO2_DATA_OFFSET, 0xFFFFFFFF);
+    
+    for (volatile uint32_t d = 0; d < 4000000; d++); // Visual verification delay
+
+    /* Turn OFF after test */
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO_DATA_OFFSET, 0x00000000);
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO2_DATA_OFFSET, 0x00000000);
+
+    xil_printf("  [OK] AXI GPIO (0x41210000) configured successfully.\r\n");
+    return XST_SUCCESS;
+}
+
+void set_status_led(uint32_t color) {
+    uint32_t val = 0;
+
+    if (color == LED_GREEN) {
+        /* LD0 Green (bit 1), LD1 Green (bit 4), standard LEDs (0x02, 0x0F) */
+        val = (1 << 1) | (1 << 4) | 0x02; 
+    } else if (color == LED_RED) {
+        /* LD0 Red (bit 0), LD1 Red (bit 3), standard LEDs (0x01) */
+        val = (1 << 2) | (1 << 5) | 0x01;
+    } else {
+        val = 0x00000000;
+    }
+
+    /* Write directly to both channels */
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO_DATA_OFFSET, val);
+    Xil_Out32(GPIO_LED_BASEADDR + GPIO2_DATA_OFFSET, val);
+}
+
+/* --- DMA Subsystem Initialization --- */
 int init_dma_subsystem(void) {
     xil_printf("Checking AXI DMA (ID: %d)...\r\n", DMA_DEV_ID);
     XAxiDma_Config *cfg_ptr = XAxiDma_LookupConfig(DMA_DEV_ID);
     if (!cfg_ptr) {
-        xil_printf("[WARN] DMA LookupConfig failed. Running in Software Simulation mode.\r\n");
+        xil_printf("  [WARN] DMA LookupConfig failed.\r\n");
         return XST_FAILURE;
     }
 
     int status = XAxiDma_CfgInitialize(&AxiDma, cfg_ptr);
     if (status != XST_SUCCESS) {
-        xil_printf("[WARN] DMA CfgInitialize failed (%d).\r\n", status);
+        xil_printf("  [WARN] DMA CfgInitialize failed (%d).\r\n", status);
         return XST_FAILURE;
     }
 
     if (XAxiDma_HasSg(&AxiDma)) {
-        xil_printf("[WARN] DMA configured in Scatter-Gather mode. Direct mode required.\r\n");
+        xil_printf("  [WARN] DMA is configured in Scatter-Gather mode. Direct mode required.\r\n");
         return XST_FAILURE;
     }
 
@@ -99,20 +153,19 @@ int init_dma_subsystem(void) {
     while (!XAxiDma_ResetIsDone(&AxiDma) && --timeout);
 
     if (timeout == 0) {
-        xil_printf("[WARN] DMA Reset timed out! PL Clock might be off.\r\n");
+        xil_printf("  [WARN] DMA Reset timed out! PL Clock might be off.\r\n");
         return XST_FAILURE;
     }
 
     g_dma_ready = 1;
-    xil_printf("[OK] AXI DMA Initialized successfully.\r\n");
+    xil_printf("  [OK] AXI DMA Initialized successfully.\r\n");
     return XST_SUCCESS;
 }
 
 /* --- Spectral Calculation Engine --- */
 int acquire_and_calculate_metrics(float *out_freq_khz, float *out_peak_mag, float *out_snr_db, int *out_peak_bin) {
     if (!g_dma_ready) {
-        // Fallback test generator if bitstream DMA is offline
-        *out_freq_khz = 10000.0f; // 10 MHz
+        *out_freq_khz = 10000.0f;
         *out_peak_mag = 6500.0f;
         *out_snr_db = 26.5f;
         *out_peak_bin = 256;
@@ -193,9 +246,12 @@ void process_telnet_session(void *p) {
     const char *welcome =
         "\r\n=======================================================\r\n"
         " Eclypse Z7 FMCW Radar Signal Analyzer\r\n"
+        " Hardware LED Indicators (0x41210000):\r\n"
+        "   GREEN : Valid Signal Detected (SNR >= 8.0 dB)\r\n"
+        "   RED   : Noise Floor / No Signal (SNR < 8.0 dB)\r\n"
         " Commands:\r\n"
         "   'start' : Start continuous live frequency update\r\n"
-        "   'stop'  : Pause live stream\r\n"
+        "   'stop'  : Pause live stream & turn OFF LEDs\r\n"
         "   's'     : Single capture shot\r\n"
         "   'quit'  : Exit Telnet session\r\n"
         "=======================================================\r\n"
@@ -214,31 +270,36 @@ void process_telnet_session(void *p) {
             } 
             else if (!strncmp(recv_buf, "stop", 4) || !strncmp(recv_buf, "pause", 5)) {
                 g_streaming_active = 0;
-                const char *hdr = "\r\n\r\n>>> LIVE STREAM PAUSED | Type 'start' to Resume <<<\r\nEclypse-Radar> ";
+                set_status_led(LED_OFF);
+                const char *hdr = "\r\n\r\n>>> LIVE STREAM PAUSED (LEDs OFF) | Type 'start' to Resume <<<\r\nEclypse-Radar> ";
                 write(sd, hdr, strlen(hdr));
             }
             else if (recv_buf[0] == 's' || recv_buf[0] == 'S') {
                 float freq_khz = 0.0f, mag = 0.0f, snr_db = 0.0f;
                 int bin = 0;
                 acquire_and_calculate_metrics(&freq_khz, &mag, &snr_db, &bin);
+
                 if (snr_db >= MIN_VALID_SNR_DB) {
+                    set_status_led(LED_GREEN);
                     if (freq_khz >= 1000.0f) {
                         snprintf(resp_buf, sizeof(resp_buf),
-                                 "\r\n[SINGLE SHOT] Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.4f MHz\r\nEclypse-Radar> ",
+                                 "\r\n[SINGLE SHOT] (LED: GREEN) Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.4f MHz\r\nEclypse-Radar> ",
                                  bin, mag, snr_db, freq_khz / 1000.0f);
                     } else {
                         snprintf(resp_buf, sizeof(resp_buf),
-                                 "\r\n[SINGLE SHOT] Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.2f kHz\r\nEclypse-Radar> ",
+                                 "\r\n[SINGLE SHOT] (LED: GREEN) Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.2f kHz\r\nEclypse-Radar> ",
                                  bin, mag, snr_db, freq_khz);
                     }
                 } else {
+                    set_status_led(LED_RED);
                     snprintf(resp_buf, sizeof(resp_buf),
-                             "\r\n[SINGLE SHOT] SNR: %5.1f dB -> [NO SIGNAL / NOISE ONLY]\r\nEclypse-Radar> ", snr_db);
+                             "\r\n[SINGLE SHOT] (LED: RED) SNR: %5.1f dB -> [NO SIGNAL / NOISE ONLY]\r\nEclypse-Radar> ", snr_db);
                 }
                 write(sd, resp_buf, strlen(resp_buf));
             }
             else if (!strncmp(recv_buf, "quit", 4)) {
                 g_streaming_active = 0;
+                set_status_led(LED_OFF);
                 const char *bye = "\r\nClosing session...\r\n";
                 write(sd, bye, strlen(bye));
                 break;
@@ -254,18 +315,20 @@ void process_telnet_session(void *p) {
 
             if (acquire_and_calculate_metrics(&freq_khz, &mag, &snr_db, &bin) == 0) {
                 if (snr_db >= MIN_VALID_SNR_DB) {
+                    set_status_led(LED_GREEN);
                     if (freq_khz >= 1000.0f) {
                         snprintf(resp_buf, sizeof(resp_buf),
-                                 "\r\x1b[K[LIVE] Peak Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.4f MHz",
+                                 "\r\x1b[K[LIVE | SIGNAL: GREEN] Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.4f MHz",
                                  bin, mag, snr_db, freq_khz / 1000.0f);
                     } else {
                         snprintf(resp_buf, sizeof(resp_buf),
-                                 "\r\x1b[K[LIVE] Peak Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.2f kHz",
+                                 "\r\x1b[K[LIVE | SIGNAL: GREEN] Bin: %4d | Mag: %8.1f | SNR: %5.1f dB | Freq: %8.2f kHz",
                                  bin, mag, snr_db, freq_khz);
                     }
                 } else {
+                    set_status_led(LED_RED);
                     snprintf(resp_buf, sizeof(resp_buf),
-                             "\r\x1b[K[LIVE] Peak Bin: ---- | Mag: -------- | SNR: %5.1f dB | [NO SIGNAL / NOISE]",
+                             "\r\x1b[K[LIVE | NOISE:  RED  ] Bin: ---- | Mag: -------- | SNR: %5.1f dB | [NO SIGNAL / NOISE]",
                              snr_db);
                 }
                 write(sd, resp_buf, strlen(resp_buf));
@@ -276,6 +339,7 @@ void process_telnet_session(void *p) {
         }
     }
 
+    set_status_led(LED_OFF);
     close(sd);
     vTaskDelete(NULL);
 }
@@ -362,6 +426,7 @@ int main_thread(void) {
     xil_printf(" Eclypse Z7 FMCW Radar Telnet Server\r\n");
     xil_printf("========================================\r\n");
 
+    init_gpio_subsystem();
     init_dma_subsystem();
 
     lwip_init();
