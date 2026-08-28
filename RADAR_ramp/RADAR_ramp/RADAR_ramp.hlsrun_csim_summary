@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\RADAR_ramp.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "08/28/26 13:29:00",
+ "timestampMillis": "1787903940535",
+ "buildStep": {
+  "cmdId": "9cdb20be-2c3e-42a6-a150-164ebcb84f32",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\logs\\RADAR_ramp.steps.log",
+  "commandLine": "C:/AMDDesignTools/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\hls_config.cfg --work_dir RADAR_ramp ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\hls_config.cfg",
+   "--work_dir",
+   "RADAR_ramp"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:29:00",
+ "timestampMillis": "1787903940535",
+ "status": {
+  "cmdId": "9cdb20be-2c3e-42a6-a150-164ebcb84f32",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "08/28/26 13:29:04",
+ "timestampMillis": "1787903944118",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "fmcw_ramp_gen",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\fmcw_ramp_gen.h",
+     "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\fmcw_ramp_gen.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "08/28/26 13:29:04",
+ "timestampMillis": "1787903944119",
+ "buildStep": {
+  "cmdId": "b40b30b2-5e55-4d85-8d7e-099d36df62af",
+  "name": "",
+  "logFile": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:29:04",
+ "timestampMillis": "1787903944120",
+ "status": {
+  "cmdId": "b40b30b2-5e55-4d85-8d7e-099d36df62af",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:29:09",
+ "timestampMillis": "1787903949831",
+ "status": {
+  "cmdId": "b40b30b2-5e55-4d85-8d7e-099d36df62af",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:29:09",
+ "timestampMillis": "1787903949932",
+ "status": {
+  "cmdId": "9cdb20be-2c3e-42a6-a150-164ebcb84f32",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:29:09",
+ "timestampMillis": "1787903949932",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:29:09",
+ "timestampMillis": "1787903949932",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

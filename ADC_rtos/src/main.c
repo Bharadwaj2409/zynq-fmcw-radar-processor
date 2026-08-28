@@ -43,12 +43,12 @@ int IicPhyReset(void);
 #define TELNET_PORT         7
 
 /* Hardware Base Addresses */
-#define GPIO_LED_BASEADDR   0x41210000  // Your Vivado AXI GPIO Base Address
+#define GPIO_LED_BASEADDR   0x41210000
 
-#define GPIO_DATA_OFFSET    0x00        // Channel 1 Data Register
-#define GPIO_TRI_OFFSET     0x04        // Channel 1 Tri-state Register (0 = Output)
-#define GPIO2_DATA_OFFSET   0x08        // Channel 2 Data Register
-#define GPIO2_TRI_OFFSET    0x0C        // Channel 2 Tri-state Register (0 = Output)
+#define GPIO_DATA_OFFSET    0x00
+#define GPIO_TRI_OFFSET     0x04
+#define GPIO2_DATA_OFFSET   0x08
+#define GPIO2_TRI_OFFSET    0x0C
 
 #if defined(XPAR_AXIDMA_0_DEVICE_ID)
     #define DMA_DEV_ID      XPAR_AXIDMA_0_DEVICE_ID
@@ -66,8 +66,8 @@ int IicPhyReset(void);
 /* FFT & Radar Signal Parameters */
 #define NUM_BINS            1024
 #define HALF_BINS           (NUM_BINS / 2)
-#define SAMPLING_FREQ_MHZ   40.0f                       // Eclypse Z7 ADC Clock (40 MSPS)
-#define BYTES_PER_SAMPLE    4                           // 16-bit I + 16-bit Q = 4 bytes per bin
+#define SAMPLING_FREQ_MHZ   40.0f
+#define BYTES_PER_SAMPLE    4
 #define DMA_BUFFER_SIZE     (NUM_BINS * BYTES_PER_SAMPLE)
 #define MIN_VALID_SNR_DB    8.0f
 
@@ -86,47 +86,40 @@ void network_thread(void *p);
 void telnet_listener_thread(void *p);
 void lwip_init(void);
 
-/* --- Direct Register GPIO Driving for 0x41210000 --- */
+/* Direct Register GPIO Driving */
 int init_gpio_subsystem(void) {
     xil_printf("Configuring AXI GPIO at Base Address: 0x%08X...\r\n", GPIO_LED_BASEADDR);
 
-    /* 1. Set all pins on Channel 1 and Channel 2 to OUTPUT mode (0x00000000) */
     Xil_Out32(GPIO_LED_BASEADDR + GPIO_TRI_OFFSET, 0x00000000);
     Xil_Out32(GPIO_LED_BASEADDR + GPIO2_TRI_OFFSET, 0x00000000);
 
-    /* 2. Self-test flash on boot: Light up LEDs for 300 ms */
+    /* Self-test flash on boot */
     Xil_Out32(GPIO_LED_BASEADDR + GPIO_DATA_OFFSET, 0xFFFFFFFF);
     Xil_Out32(GPIO_LED_BASEADDR + GPIO2_DATA_OFFSET, 0xFFFFFFFF);
-    
-    for (volatile uint32_t d = 0; d < 4000000; d++); // Visual verification delay
+    for (volatile uint32_t d = 0; d < 4000000; d++);
 
-    /* Turn OFF after test */
     Xil_Out32(GPIO_LED_BASEADDR + GPIO_DATA_OFFSET, 0x00000000);
     Xil_Out32(GPIO_LED_BASEADDR + GPIO2_DATA_OFFSET, 0x00000000);
 
-    xil_printf("  [OK] AXI GPIO (0x41210000) configured successfully.\r\n");
+    xil_printf("  [OK] AXI GPIO configured successfully.\r\n");
     return XST_SUCCESS;
 }
 
 void set_status_led(uint32_t color) {
     uint32_t val = 0;
-
     if (color == LED_GREEN) {
-        /* LD0 Green (bit 1), LD1 Green (bit 4), standard LEDs (0x02, 0x0F) */
         val = (1 << 1) | (1 << 4) | 0x02; 
     } else if (color == LED_RED) {
-        /* LD0 Red (bit 0), LD1 Red (bit 3), standard LEDs (0x01) */
         val = (1 << 2) | (1 << 5) | 0x01;
     } else {
         val = 0x00000000;
     }
 
-    /* Write directly to both channels */
     Xil_Out32(GPIO_LED_BASEADDR + GPIO_DATA_OFFSET, val);
     Xil_Out32(GPIO_LED_BASEADDR + GPIO2_DATA_OFFSET, val);
 }
 
-/* --- DMA Subsystem Initialization --- */
+/* DMA Subsystem Initialization */
 int init_dma_subsystem(void) {
     xil_printf("Checking AXI DMA (ID: %d)...\r\n", DMA_DEV_ID);
     XAxiDma_Config *cfg_ptr = XAxiDma_LookupConfig(DMA_DEV_ID);
@@ -162,7 +155,7 @@ int init_dma_subsystem(void) {
     return XST_SUCCESS;
 }
 
-/* --- Spectral Calculation Engine --- */
+/* Spectral Calculation Engine */
 int acquire_and_calculate_metrics(float *out_freq_khz, float *out_peak_mag, float *out_snr_db, int *out_peak_bin) {
     if (!g_dma_ready) {
         *out_freq_khz = 10000.0f;
@@ -235,7 +228,7 @@ int acquire_and_calculate_metrics(float *out_freq_khz, float *out_peak_mag, floa
     return 0;
 }
 
-/* --- Telnet CLI Worker Task --- */
+/* Telnet CLI Worker Task */
 void process_telnet_session(void *p) {
     int sd = *(int *)p;
     char recv_buf[128];
@@ -250,10 +243,11 @@ void process_telnet_session(void *p) {
         "   GREEN : Valid Signal Detected (SNR >= 8.0 dB)\r\n"
         "   RED   : Noise Floor / No Signal (SNR < 8.0 dB)\r\n"
         " Commands:\r\n"
-        "   'start' : Start continuous live frequency update\r\n"
-        "   'stop'  : Pause live stream & turn OFF LEDs\r\n"
-        "   's'     : Single capture shot\r\n"
-        "   'quit'  : Exit Telnet session\r\n"
+        "   'start'     : Start continuous live frequency update\r\n"
+        "   'stop'      : Pause live stream & turn OFF LEDs\r\n"
+        "   's'         : Single capture shot\r\n"
+        "   'telemetry' : JSON format output for Host AI Bridge\r\n"
+        "   'quit'      : Exit Telnet session\r\n"
         "=======================================================\r\n"
         "Eclypse-Radar> ";
 
@@ -263,7 +257,18 @@ void process_telnet_session(void *p) {
         int n = read(sd, recv_buf, sizeof(recv_buf) - 1);
         if (n > 0) {
             recv_buf[n] = '\0';
-            if (!strncmp(recv_buf, "start", 5)) {
+            
+            if (!strncmp(recv_buf, "telemetry", 9) || !strncmp(recv_buf, "ai_data", 7)) {
+                float freq_khz = 0.0f, mag = 0.0f, snr_db = 0.0f;
+                int bin = 0;
+                acquire_and_calculate_metrics(&freq_khz, &mag, &snr_db, &bin);
+
+                snprintf(resp_buf, sizeof(resp_buf),
+                         "{\"bin\":%d,\"mag\":%.2f,\"snr_db\":%.2f,\"freq_khz\":%.2f,\"valid\":%s}\r\n",
+                         bin, mag, snr_db, freq_khz, (snr_db >= MIN_VALID_SNR_DB) ? "true" : "false");
+                write(sd, resp_buf, strlen(resp_buf));
+            }
+            else if (!strncmp(recv_buf, "start", 5)) {
                 g_streaming_active = 1;
                 const char *hdr = "\r\n>>> LIVE STREAM RUNNING | Type 'stop' to Pause <<<\r\n";
                 write(sd, hdr, strlen(hdr));
@@ -304,7 +309,7 @@ void process_telnet_session(void *p) {
                 write(sd, bye, strlen(bye));
                 break;
             } else if (recv_buf[0] != '\r' && recv_buf[0] != '\n') {
-                const char *prompt = "\r\nUnknown command. Type 'start', 'stop', 's', or 'quit'.\r\nEclypse-Radar> ";
+                const char *prompt = "\r\nUnknown command. Type 'start', 'stop', 's', 'telemetry', or 'quit'.\r\nEclypse-Radar> ";
                 write(sd, prompt, strlen(prompt));
             }
         }
@@ -333,7 +338,7 @@ void process_telnet_session(void *p) {
                 }
                 write(sd, resp_buf, strlen(resp_buf));
             }
-            vTaskDelay(pdMS_TO_TICKS(100)); // Refresh in-place at 10 Hz
+            vTaskDelay(pdMS_TO_TICKS(100));
         } else {
             vTaskDelay(pdMS_TO_TICKS(20));
         }
@@ -344,7 +349,7 @@ void process_telnet_session(void *p) {
     vTaskDelete(NULL);
 }
 
-/* --- Telnet Server Listener Task --- */
+/* Telnet Server Listener Task */
 void telnet_listener_thread(void *p) {
     (void)p;
     int sock = lwip_socket(AF_INET, SOCK_STREAM, 0);
@@ -370,12 +375,12 @@ void telnet_listener_thread(void *p) {
     }
 }
 
-/* --- lwIP Network Startup Thread --- */
+/* lwIP Network Startup Thread */
 void network_thread(void *p) {
     (void)p;
     struct netif *netif = &server_netif;
     unsigned char mac_addr[] = { 0x00, 0x0a, 0x35, 0x00, 0x01, 0x02 };
-    ip_addr_t ipaddr, netmask, gw;
+    ip_addr_t ipaddr;
 
     IP4_ADDR(&ipaddr, 0, 0, 0, 0);
     if (!xemac_add(netif, &ipaddr, &ipaddr, &ipaddr, mac_addr, PLATFORM_EMAC_BASEADDR)) {
@@ -416,7 +421,7 @@ void network_thread(void *p) {
     vTaskDelete(NULL);
 }
 
-/* --- Main Dispatcher Thread --- */
+/* Main Dispatcher Thread */
 int main_thread(void) {
 #ifdef XPS_BOARD_ZCU102
     IicPhyReset();

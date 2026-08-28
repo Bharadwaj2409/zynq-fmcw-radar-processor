@@ -1,0 +1,139 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2025.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>10.000</TargetClockPeriod>
+  <AchievedClockPeriod>5.281</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>5.281</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>5.281</CP_SYNTH>
+  <CP_TARGET>10.000</CP_TARGET>
+  <SLACK_FINAL>4.719</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>4.719</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>4.719</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>4.719</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>0</BRAM>
+    <CLB>0</CLB>
+    <DSP>0</DSP>
+    <FF>153</FF>
+    <LATCH>0</LATCH>
+    <LUT>147</LUT>
+    <SRL>0</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>280</BRAM>
+    <CLB>0</CLB>
+    <DSP>220</DSP>
+    <FF>106400</FF>
+    <LUT>53200</LUT>
+    <URAM>0</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="fmcw_ramp_gen" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="4">regslice_both_dac_stream_V_data_V_U regslice_both_dac_stream_V_keep_V_U regslice_both_dac_stream_V_last_V_U s_axi_control_s_axi_U</SubModules>
+    <Resources FF="153" LUT="147" LogicLUT="147"/>
+  </RtlModule>
+  <RtlModule CELL="inst/regslice_both_dac_stream_V_data_V_U" DEPTH="1" FILE_NAME="fmcw_ramp_gen.v" ORIG_REF_NAME="fmcw_ramp_gen_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="inst/regslice_both_dac_stream_V_keep_V_U" DEPTH="1" FILE_NAME="fmcw_ramp_gen.v" ORIG_REF_NAME="fmcw_ramp_gen_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="inst/regslice_both_dac_stream_V_last_V_U" DEPTH="1" FILE_NAME="fmcw_ramp_gen.v" ORIG_REF_NAME="fmcw_ramp_gen_regslice_both">
+  </RtlModule>
+  <RtlModule CELL="inst/s_axi_control_s_axi_U" DEPTH="1" FILE_NAME="fmcw_ramp_gen.v" ORIG_REF_NAME="fmcw_ramp_gen_s_axi_control_s_axi">
+    <Resources FF="78" LUT="119" LogicLUT="119"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="5.306" DATAPATH_LOGIC_DELAY="3.525" DATAPATH_NET_DELAY="1.781" ENDPOINT_PIN="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[13]/D" LOGIC_LEVELS="10" MAX_FANOUT="30" SLACK="4.719" STARTPOINT_PIN="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen_s_axi_control_s_axi.v" LINE_NUMBER="272"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_21" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_25" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_8" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_2" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206[3]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="9"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[11]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[13]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="259"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="5.201" DATAPATH_LOGIC_DELAY="3.420" DATAPATH_NET_DELAY="1.781" ENDPOINT_PIN="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[12]/D" LOGIC_LEVELS="10" MAX_FANOUT="30" SLACK="4.824" STARTPOINT_PIN="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen_s_axi_control_s_axi.v" LINE_NUMBER="272"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_21" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_25" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_8" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_2" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206[3]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="9"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[11]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[13]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[12]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="259"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="5.189" DATAPATH_LOGIC_DELAY="3.408" DATAPATH_NET_DELAY="1.781" ENDPOINT_PIN="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[9]/D" LOGIC_LEVELS="9" MAX_FANOUT="30" SLACK="4.836" STARTPOINT_PIN="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen_s_axi_control_s_axi.v" LINE_NUMBER="272"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_21" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_25" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_8" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_2" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206[3]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="9"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[11]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[9]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="259"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="5.183" DATAPATH_LOGIC_DELAY="3.402" DATAPATH_NET_DELAY="1.781" ENDPOINT_PIN="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[11]/D" LOGIC_LEVELS="9" MAX_FANOUT="30" SLACK="4.842" STARTPOINT_PIN="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen_s_axi_control_s_axi.v" LINE_NUMBER="272"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_21" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_25" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_8" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_2" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206[3]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="9"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[11]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[11]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="259"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="5.108" DATAPATH_LOGIC_DELAY="3.327" DATAPATH_NET_DELAY="1.781" ENDPOINT_PIN="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[10]/D" LOGIC_LEVELS="9" MAX_FANOUT="30" SLACK="4.917" STARTPOINT_PIN="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/int_max_val_reg[3]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen_s_axi_control_s_axi.v" LINE_NUMBER="272"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_21" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_25" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="355"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_8" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_2" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/sync_trigger[0]_INST_0_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen_regslice_both.v" LINE_NUMBER="41"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206[3]_i_5" PRIMITIVE_TYPE="LUT.others.LUT2" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="9"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[3]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[7]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/s_axi_control_s_axi_U/select_ln43_reg_206_reg[11]_i_1" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="357"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/select_ln43_reg_206_reg[10]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="fmcw_ramp_gen.v" LINE_NUMBER="259"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/fmcw_ramp_gen_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/fmcw_ramp_gen_failfast_synth.rpt"/>
+  <ReportFile TYPE="power" PATH="verilog/report/fmcw_ramp_gen_power_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/fmcw_ramp_gen_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/fmcw_ramp_gen_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/fmcw_ramp_gen_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/fmcw_ramp_gen_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

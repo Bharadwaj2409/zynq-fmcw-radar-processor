@@ -1,0 +1,23 @@
+<dict>
+  <key>main-file</key>
+  <string>C:/Users/vempa/Eclypse-Z7/project_1/RADAR_ramp/RADAR_ramp/hls/.autopilot/db/fmcw_ramp_gen.pp.0.cpp</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>fmcw_ramp_gen.cpp</string>
+      <key>line</key>
+      <integer>22</integer>
+      <key>column</key>
+      <integer>1</integer>
+      <key>message</key>
+      <string>&apos;rewind&apos; option is valid for &apos;loop pipeline&apos; only - ignored</string>
+      <key>ID</key>
+      <integer>7022</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+  </array>
+</dict>

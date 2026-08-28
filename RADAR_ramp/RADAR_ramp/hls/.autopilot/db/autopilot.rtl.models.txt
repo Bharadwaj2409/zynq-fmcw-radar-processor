@@ -1,0 +1,6 @@
+fmcw_ramp_gen_s_axi_control_s_axi
+fmcw_ramp_gen_regslice_both
+fmcw_ramp_gen_regslice_both
+fmcw_ramp_gen_regslice_both
+fmcw_ramp_gen_regslice_both
+fmcw_ramp_gen

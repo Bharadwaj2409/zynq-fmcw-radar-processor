@@ -1,0 +1,35 @@
+
+
+set RtlHierarchyInfo {[
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5"],
+		"CDFG" : "fmcw_ramp_gen",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1", "EstimateLatencyMax" : "1",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "dac_stream_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "dac_stream",
+				"BlockSignal" : [
+					{"Name" : "dac_stream_TDATA_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "dac_stream_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "dac_stream"},
+			{"Name" : "dac_stream_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "dac_stream"},
+			{"Name" : "dac_stream_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "dac_stream"},
+			{"Name" : "sync_trigger", "Type" : "None", "Direction" : "O"},
+			{"Name" : "min_val", "Type" : "None", "Direction" : "I"},
+			{"Name" : "max_val", "Type" : "None", "Direction" : "I"},
+			{"Name" : "step_size", "Type" : "None", "Direction" : "I"},
+			{"Name" : "enable", "Type" : "None", "Direction" : "I"},
+			{"Name" : "current_val", "Type" : "OVld", "Direction" : "IO"}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.s_axi_control_s_axi_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_dac_stream_V_data_V_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_dac_stream_V_keep_V_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_dac_stream_V_strb_V_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_dac_stream_V_last_V_U", "Parent" : "0"}]}

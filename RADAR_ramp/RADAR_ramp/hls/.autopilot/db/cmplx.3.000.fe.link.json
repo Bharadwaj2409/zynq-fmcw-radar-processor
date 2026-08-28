@@ -1,0 +1,23 @@
+{
+  "0": {
+    "basicblocks": 13,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "fmcw_ramp_gen.cpp",
+    "fileloc": 3,
+    "instructions": 144,
+    "loads": {
+      "G": 3,
+      "L": 9
+    },
+    "memory_accesses": 0,
+    "name": "fmcw_ramp_gen",
+    "stores": {
+      "G": 7,
+      "L": 8,
+      "T": 2
+    },
+    "total_instructions": 629
+  }
+}

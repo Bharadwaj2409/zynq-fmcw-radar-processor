@@ -1866,7 +1866,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
-                firmware-name = "ADC_GPIO.bit.bin";
+                firmware-name = "Hanning_Window.bit.bin";
 
                 clocking0: clocking0 {
                         phandle = <0x50>;

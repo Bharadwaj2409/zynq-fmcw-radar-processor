@@ -1,0 +1,269 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\RADAR_ramp.hlsrun_impl_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "08/28/26 13:36:37",
+ "timestampMillis": "1787904397185",
+ "buildStep": {
+  "cmdId": "77122681-031b-4d21-ae92-ce9691124fac",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\logs\\RADAR_ramp.steps.log",
+  "commandLine": "C:/AMDDesignTools/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --impl --config C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\hls_config.cfg --work_dir RADAR_ramp ",
+  "args": [
+   "--mode",
+   "hls",
+   "--impl",
+   "--config",
+   "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\hls_config.cfg",
+   "--work_dir",
+   "RADAR_ramp"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:36:37",
+ "timestampMillis": "1787904397186",
+ "status": {
+  "cmdId": "77122681-031b-4d21-ae92-ce9691124fac",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401066",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IMPL",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "fmcw_ramp_gen",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\fmcw_ramp_gen.h",
+     "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\fmcw_ramp_gen.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401067",
+ "buildStep": {
+  "cmdId": "4408abe1-cfcb-4a66-affa-452a90ec4c0a",
+  "name": "",
+  "logFile": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401067",
+ "status": {
+  "cmdId": "4408abe1-cfcb-4a66-affa-452a90ec4c0a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401069",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\impl\\verilog",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401070",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\impl\\report\\verilog\\export_syn.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401070",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\impl\\report\\verilog\\export_syn.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401071",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\impl\\verilog",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401071",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\impl\\report\\verilog\\export_impl.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:36:41",
+ "timestampMillis": "1787904401071",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls\\impl\\report\\verilog\\export_impl.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:39:55",
+ "timestampMillis": "1787904595805",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:39:55",
+ "timestampMillis": "1787904595806",
+ "report": {
+  "path": "C:/Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\RADAR_ramp\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:39:55",
+ "timestampMillis": "1787904595806",
+ "status": {
+  "cmdId": "4408abe1-cfcb-4a66-affa-452a90ec4c0a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/28/26 13:39:55",
+ "timestampMillis": "1787904595893",
+ "status": {
+  "cmdId": "77122681-031b-4d21-ae92-ce9691124fac",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:39:55",
+ "timestampMillis": "1787904595894",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/28/26 13:39:55",
+ "timestampMillis": "1787904595894",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

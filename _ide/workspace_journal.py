@@ -1,76 +1,33 @@
-# 2026-08-25T13:07:16.708920300
+# 2026-08-28T13:13:07.703900700
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="project_1")
 
-platform = client.get_component(name="GPIO_platform")
-status = platform.build()
+comp = client.create_hls_component(name = "RADAR_ramp",cfg_file = ["hls_config.cfg"],template = "empty_hls_component")
 
-comp = client.get_component(name="ADC_rtos")
-comp.build()
+cfg = client.get_config_file(path="C:\Users\vempa\Eclypse-Z7\project_1\RADAR_ramp\hls_config.cfg")
 
-status = platform.build()
+cfg.set_values(key="syn.file", values=["fmcw_ramp_gen.h"])
 
-comp.build()
+cfg.set_values(key="syn.file", values=["fmcw_ramp_gen.h", "fmcw_ramp_gen.cpp"])
 
-status = platform.build()
+cfg.set_values(key="tb.file", values=["tb_fmcw_ramp_gen.cpp"])
 
-comp.build()
+comp = client.get_component(name="RADAR_ramp")
+comp.run(operation="C_SIMULATION")
 
-status = platform.build()
+cfg = client.get_config_file(path="/c:/Users/vempa/Eclypse-Z7/project_1/RADAR_ramp/hls_config.cfg")
 
-comp.build()
+cfg.set_value(section="hls", key="syn.top", value="fmcw_ramp_gen")
 
-status = platform.build()
+comp.run(operation="C_SIMULATION")
 
-comp.build()
+comp.run(operation="SYNTHESIS")
 
-status = platform.build()
+comp.run(operation="CO_SIMULATION")
 
-comp.build()
+comp.run(operation="PACKAGE")
 
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
+comp.run(operation="IMPLEMENTATION")
 

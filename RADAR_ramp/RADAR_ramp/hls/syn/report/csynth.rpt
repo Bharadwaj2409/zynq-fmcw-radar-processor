@@ -1,0 +1,152 @@
+
+
+================================================================
+== Synthesis Summary Report of 'fmcw_ramp_gen'
+================================================================
++ General Information: 
+    * Date:           Fri Aug 28 13:31:00 2026
+    * Version:        2025.2 (Build 6295257 on Nov 14 2025)
+    * Project:        RADAR_ramp
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
+* Performance & Resource Estimates: 
++-----------------+------+---------------+----------+---------+------+----------+---------+--------+------+------+----+-----------+-----------+-----+
+|     Modules     | Issue|               | Iteration|         | Trip |          |      Latency     |      |      |    |           |           |     |
+|     & Loops     | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|  (ns)  | Slack| BRAM | DSP|     FF    |    LUT    | URAM|
++-----------------+------+---------------+----------+---------+------+----------+---------+--------+------+------+----+-----------+-----------+-----+
+|+ fmcw_ramp_gen  |     -|              -|         -|        2|     -|        no|        1|  10.000|  0.27|     -|   -|  135 (~0%)|  258 (~0%)|    -|
++-----------------+------+---------------+----------+---------+------+----------+---------+--------+------+------+----+-----------+-----------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------------+------------+---------------+--------+----------+
+| Interface           | Data Width | Address Width | Offset | Register |
++---------------------+------------+---------------+--------+----------+
+| s_axi_s_axi_control | 32         | 6             | 16     | 0        |
++---------------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface           | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_s_axi_control | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_s_axi_control | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_s_axi_control | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_s_axi_control | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_s_axi_control | min_val   | 0x10   | 32    | W      | Data signal of min_val           |                                                                      |
+| s_axi_s_axi_control | max_val   | 0x18   | 32    | W      | Data signal of max_val           |                                                                      |
+| s_axi_s_axi_control | step_size | 0x20   | 32    | W      | Data signal of step_size         |                                                                      |
+| s_axi_s_axi_control | enable    | 0x28   | 32    | W      | Data signal of enable            |                                                                      |
++---------------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface  | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| dac_stream | out       | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* Other Ports
++--------------+---------+-----------+----------+
+| Port         | Mode    | Direction | Bitwidth |
++--------------+---------+-----------+----------+
+| sync_trigger | ap_none | out       | 1        |
++--------------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++--------------+-----------+-----------------------------------------------------------------------------+
+| Argument     | Direction | Datatype                                                                    |
++--------------+-----------+-----------------------------------------------------------------------------+
+| dac_stream   | out       | stream<hls::axis<ap_int<32>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| sync_trigger | out       | ap_uint<1>&                                                                 |
+| min_val      | in        | ap_uint<14>                                                                 |
+| max_val      | in        | ap_uint<14>                                                                 |
+| step_size    | in        | ap_uint<14>                                                                 |
+| enable       | in        | ap_uint<1>                                                                  |
++--------------+-----------+-----------------------------------------------------------------------------+
+
+* SW-to-HW Mapping
++--------------+---------------------+-----------+-------------------------------------+
+| Argument     | HW Interface        | HW Type   | HW Info                             |
++--------------+---------------------+-----------+-------------------------------------+
+| dac_stream   | dac_stream          | interface |                                     |
+| sync_trigger | sync_trigger        | port      |                                     |
+| min_val      | s_axi_s_axi_control | register  | name=min_val offset=0x10 range=32   |
+| max_val      | s_axi_s_axi_control | register  | name=max_val offset=0x18 range=32   |
+| step_size    | s_axi_s_axi_control | register  | name=step_size offset=0x20 range=32 |
+| enable       | s_axi_s_axi_control | register  | name=enable offset=0x28 range=32    |
++--------------+---------------------+-----------+-------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------+-----+--------+-------------+--------+----------+---------+
+| Name                    | DSP | Pragma | Variable    | Op     | Impl     | Latency |
++-------------------------+-----+--------+-------------+--------+----------+---------+
+| + fmcw_ramp_gen         | 0   |        |             |        |          |         |
+|   add_ln43_fu_149_p2    |     |        | add_ln43    | add    | fabric   | 0       |
+|   icmp_ln43_fu_159_p2   |     |        | icmp_ln43   | setlt  | auto     | 0       |
+|   xor_ln43_fu_165_p2    |     |        | xor_ln43    | xor    | auto     | 0       |
+|   add_ln49_fu_173_p2    |     |        | add_ln49    | add    | fabric   | 0       |
+|   select_ln43_fu_179_p3 |     |        | select_ln43 | select | auto_sel | 0       |
++-------------------------+-----+--------+-------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name                    | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                         |           |           |      |      |        |          |      |         | Banks            |
++-------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + fmcw_ramp_gen         |           |           | 0    | 0    |        |          |      |         |                  |
+|   s_axi_control_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
++-------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+-------------+-----------------------------------------+-------------------------------------------------------------+
+| Type     | Options     | Location                                | Messages                                                    |
++----------+-------------+-----------------------------------------+-------------------------------------------------------------+
+| PIPELINE | ii=1 rewind | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:22) | 'rewind' option is valid for 'loop pipeline' only - ignored |
++----------+-------------+-----------------------------------------+-------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+----------------------------------------------------+-----------------------------------------+
+| Type      | Options                                            | Location                                |
++-----------+----------------------------------------------------+-----------------------------------------+
+| INTERFACE | mode=axis register_mode=both port=dac_stream       | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:14) |
+| INTERFACE | mode=ap_none port=sync_trigger                     | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:15) |
+| INTERFACE | mode=s_axilite port=min_val bundle=s_axi_control   | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:16) |
+| INTERFACE | mode=s_axilite port=max_val bundle=s_axi_control   | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:17) |
+| INTERFACE | mode=s_axilite port=step_size bundle=s_axi_control | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:18) |
+| INTERFACE | mode=s_axilite port=enable bundle=s_axi_control    | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:19) |
+| INTERFACE | mode=s_axilite port=return bundle=s_axi_control    | in fmcw_ramp_gen (fmcw_ramp_gen.cpp:20) |
++-----------+----------------------------------------------------+-----------------------------------------+
+
+

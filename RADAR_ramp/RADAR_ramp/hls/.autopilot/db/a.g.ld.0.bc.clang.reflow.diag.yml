@@ -1,0 +1,54 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 28, Column: 17 }
+Function:        _Z13fmcw_ramp_genRN3hls6streamINS_4axisI6ap_intILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEER7ap_uintILi1EES7_ILi14EESA_SA_S8_
+Args:            
+  - Callee:          'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'fmcw_ramp_gen(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<14>, ap_uint<14>, ap_uint<14>, ap_uint<1>)'
+    DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 10, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 28, Column: 17 }
+Function:        _Z13fmcw_ramp_genRN3hls6streamINS_4axisI6ap_intILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEER7ap_uintILi1EES7_ILi14EESA_SA_S8_
+Args:            
+  - Callee:          'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'fmcw_ramp_gen(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<14>, ap_uint<14>, ap_uint<14>, ap_uint<1>)'
+    DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 10, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_fmcw_ramp_gen_ir
+Args:            
+  - Callee:          'fmcw_ramp_gen(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<14>, ap_uint<14>, ap_uint<14>, ap_uint<1>)'
+    DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 10, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_fmcw_ramp_gen_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 10, Column: 0 }
+Function:        _Z13fmcw_ramp_genRN3hls6streamINS_4axisI6ap_intILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEER7ap_uintILi1EES7_ILi14EESA_SA_S8_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()'
+    DebugLoc:        { File: 'C:/AMDDesignTools/2025.2/Vitis/common/technology/autopilot\ap_axi_sdata.h', 
+                       Line: 217, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fmcw_ramp_gen(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<14>, ap_uint<14>, ap_uint<14>, ap_uint<1>)'
+    DebugLoc:        { File: fmcw_ramp_gen.cpp, Line: 10, Column: 0 }
+  - String:          ''''
+...
