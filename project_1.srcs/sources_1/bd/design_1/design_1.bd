@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x8F0D7C316692F80",
+      "boundary_crc": "0xD37FB7BBBEBCB9D8",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -51,7 +51,8 @@
       "sr_tlast": "",
       "adc_ch1_slice": "",
       "ilconcat_0": "",
-      "ilconstant_0": ""
+      "ilconstant_0": "",
+      "DAC_wrapper_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -498,6 +499,38 @@
             "value": "ACTIVE_HIGH"
           }
         }
+      },
+      "ZmodDAC_ClkIO_0": {
+        "direction": "O"
+      },
+      "ZmodDAC_ClkIn_0": {
+        "direction": "O"
+      },
+      "dZmodDAC_Data_0": {
+        "direction": "O",
+        "left": "13",
+        "right": "0"
+      },
+      "sZmodDAC_CS_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_EnOut_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_Reset_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_SCLK_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_SDIO_0": {
+        "direction": "IO"
+      },
+      "sZmodDAC_SetFS1_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_SetFS2_0": {
+        "direction": "O"
       }
     },
     "components": {
@@ -1619,11 +1652,14 @@
           "CLKOUT1_REQUESTED_OUT_FREQ": {
             "value": "40"
           },
+          "CLKOUT2_JITTER": {
+            "value": "265.121"
+          },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
-            "value": "40"
+            "value": "100"
           },
           "CLKOUT2_REQUESTED_PHASE": {
-            "value": "90"
+            "value": "0"
           },
           "CLKOUT2_USED": {
             "value": "true"
@@ -1640,14 +1676,38 @@
           "CLKOUT3_USED": {
             "value": "true"
           },
+          "CLKOUT4_JITTER": {
+            "value": "265.121"
+          },
+          "CLKOUT4_PHASE_ERROR": {
+            "value": "265.359"
+          },
+          "CLKOUT4_REQUESTED_PHASE": {
+            "value": "90"
+          },
+          "CLKOUT4_USED": {
+            "value": "true"
+          },
           "MMCM_CLKOUT0_DIVIDE_F": {
             "value": "20.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "8"
+          },
+          "MMCM_CLKOUT1_PHASE": {
+            "value": "0.000"
           },
           "MMCM_CLKOUT2_DIVIDE": {
             "value": "5"
           },
+          "MMCM_CLKOUT3_DIVIDE": {
+            "value": "8"
+          },
+          "MMCM_CLKOUT3_PHASE": {
+            "value": "90.000"
+          },
           "NUM_OUT_CLKS": {
-            "value": "3"
+            "value": "4"
           }
         }
       },
@@ -3081,8 +3141,14 @@
           "CE": {
             "value": "true"
           },
+          "Load": {
+            "value": "false"
+          },
           "Output_Width": {
             "value": "10"
+          },
+          "SCLR": {
+            "value": "true"
           },
           "Sync_Threshold_Output": {
             "value": "true"
@@ -3208,6 +3274,100 @@
             "value": "16"
           }
         }
+      },
+      "DAC_wrapper_0": {
+        "vlnv": "xilinx.com:module_ref:DAC_wrapper:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_DAC_wrapper_0_6",
+        "xci_path": "ip\\design_1_DAC_wrapper_0_6\\design_1_DAC_wrapper_0_6.xci",
+        "inst_hier_path": "DAC_wrapper_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DAC_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "DAC_Clk_0": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "90.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "SysClk100_0": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "ZmodDAC_ClkIO_0": {
+            "direction": "O"
+          },
+          "ZmodDAC_ClkIn_0": {
+            "direction": "O"
+          },
+          "dZmodDAC_Data_0": {
+            "direction": "O",
+            "left": "13",
+            "right": "0"
+          },
+          "reset_rtl": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "sZmodDAC_CS_0": {
+            "direction": "O"
+          },
+          "sZmodDAC_EnOut_0": {
+            "direction": "O"
+          },
+          "sZmodDAC_Reset_0": {
+            "direction": "O"
+          },
+          "sZmodDAC_SCLK_0": {
+            "direction": "O"
+          },
+          "sZmodDAC_SDIO_0": {
+            "direction": "IO"
+          },
+          "sZmodDAC_SetFS1_0": {
+            "direction": "O"
+          },
+          "sZmodDAC_SetFS2_0": {
+            "direction": "O"
+          },
+          "sync_trigger_0": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -3303,10 +3463,76 @@
       }
     },
     "nets": {
+      "DAC_wrapper_0_ZmodDAC_ClkIO_0": {
+        "ports": [
+          "DAC_wrapper_0/ZmodDAC_ClkIO_0",
+          "ZmodDAC_ClkIO_0"
+        ]
+      },
+      "DAC_wrapper_0_ZmodDAC_ClkIn_0": {
+        "ports": [
+          "DAC_wrapper_0/ZmodDAC_ClkIn_0",
+          "ZmodDAC_ClkIn_0"
+        ]
+      },
+      "DAC_wrapper_0_dZmodDAC_Data_0": {
+        "ports": [
+          "DAC_wrapper_0/dZmodDAC_Data_0",
+          "dZmodDAC_Data_0"
+        ]
+      },
+      "DAC_wrapper_0_sZmodDAC_CS_0": {
+        "ports": [
+          "DAC_wrapper_0/sZmodDAC_CS_0",
+          "sZmodDAC_CS_0"
+        ]
+      },
+      "DAC_wrapper_0_sZmodDAC_EnOut_0": {
+        "ports": [
+          "DAC_wrapper_0/sZmodDAC_EnOut_0",
+          "sZmodDAC_EnOut_0"
+        ]
+      },
+      "DAC_wrapper_0_sZmodDAC_Reset_0": {
+        "ports": [
+          "DAC_wrapper_0/sZmodDAC_Reset_0",
+          "sZmodDAC_Reset_0"
+        ]
+      },
+      "DAC_wrapper_0_sZmodDAC_SCLK_0": {
+        "ports": [
+          "DAC_wrapper_0/sZmodDAC_SCLK_0",
+          "sZmodDAC_SCLK_0"
+        ]
+      },
+      "DAC_wrapper_0_sZmodDAC_SetFS1_0": {
+        "ports": [
+          "DAC_wrapper_0/sZmodDAC_SetFS1_0",
+          "sZmodDAC_SetFS1_0"
+        ]
+      },
+      "DAC_wrapper_0_sZmodDAC_SetFS2_0": {
+        "ports": [
+          "DAC_wrapper_0/sZmodDAC_SetFS2_0",
+          "sZmodDAC_SetFS2_0"
+        ]
+      },
+      "DAC_wrapper_0_sync_trigger_0": {
+        "ports": [
+          "DAC_wrapper_0/sync_trigger_0",
+          "c_counter_binary_0/SCLR"
+        ]
+      },
       "Net": {
         "ports": [
           "sZmodADC_SDIO_0",
           "ZmodADC_Controller_0/sZmodADC_SDIO"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "sZmodDAC_SDIO_0",
+          "DAC_wrapper_0/sZmodDAC_SDIO_0"
         ]
       },
       "ZmodADC_Controller_0_ZmodAdcClkIn_n": {
@@ -3451,10 +3677,22 @@
           "ZmodADC_Controller_0/SysClk100"
         ]
       },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "DAC_wrapper_0/SysClk100_0"
+        ]
+      },
       "clk_wiz_0_clk_out3": {
         "ports": [
           "clk_wiz_0/clk_out3",
           "ZmodADC_Controller_0/ADC_InClk"
+        ]
+      },
+      "clk_wiz_0_clk_out4": {
+        "ports": [
+          "clk_wiz_0/clk_out4",
+          "DAC_wrapper_0/DAC_Clk_0"
         ]
       },
       "clk_wiz_0_locked": {
@@ -3559,7 +3797,8 @@
           "ZmodADC_Controller_0/aRst_n",
           "axis_subset_converter_0/aresetn",
           "xfft_range/aresetn",
-          "axis_data_fifo_0/s_axis_aresetn"
+          "axis_data_fifo_0/s_axis_aresetn",
+          "DAC_wrapper_0/reset_rtl"
         ]
       },
       "rst_ps7_0_100M_peripheral_aresetn": {

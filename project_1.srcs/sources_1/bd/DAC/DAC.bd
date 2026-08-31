@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x330463E1A625A1E8",
+      "boundary_crc": "0x56883E67B55F20BA",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/DAC",
       "name": "DAC",
@@ -12,7 +12,6 @@
     },
     "design_tree": {
       "ZmodAWGController_0": "",
-      "clk_wiz_0": "",
       "DAC_EN": "",
       "ilconstant_0": "",
       "proc_sys_reset_0": "",
@@ -109,16 +108,20 @@
       "sZmodDAC_EnOut_0": {
         "direction": "O"
       },
-      "sys_clock": {
+      "sync_trigger_0": {
+        "direction": "O"
+      },
+      "SysClk100_0": {
         "type": "clk",
         "direction": "I",
         "parameters": {
           "CLK_DOMAIN": {
-            "value": "DAC_sys_clock",
+            "value": "DAC_SysClk100_0",
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "125000000"
+            "value": "100000000",
+            "value_src": "default"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -129,7 +132,33 @@
             "value_src": "default"
           },
           "PHASE": {
-            "value": "0.0"
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "DAC_Clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "DAC_DAC_Clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "90.0"
           }
         }
       },
@@ -154,42 +183,16 @@
         "xci_name": "DAC_ZmodAWGController_0_0",
         "xci_path": "ip\\DAC_ZmodAWGController_0_0\\DAC_ZmodAWGController_0_0.xci",
         "inst_hier_path": "ZmodAWGController_0",
-        "has_run_ip_tcl": "true"
-      },
-      "clk_wiz_0": {
-        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "ip_revision": "17",
-        "xci_name": "DAC_clk_wiz_0_0",
-        "xci_path": "ip\\DAC_clk_wiz_0_0\\DAC_clk_wiz_0_0.xci",
-        "inst_hier_path": "clk_wiz_0",
         "has_run_ip_tcl": "true",
         "parameters": {
-          "CLKOUT2_JITTER": {
-            "value": "124.615"
+          "kCh1ScaleStatic": {
+            "value": "1"
           },
-          "CLKOUT2_PHASE_ERROR": {
-            "value": "96.948"
+          "kCh2ScaleStatic": {
+            "value": "1"
           },
-          "CLKOUT2_REQUESTED_PHASE": {
-            "value": "90.000"
-          },
-          "CLKOUT2_USED": {
-            "value": "true"
-          },
-          "CLK_IN1_BOARD_INTERFACE": {
-            "value": "sys_clock"
-          },
-          "MMCM_CLKOUT1_DIVIDE": {
-            "value": "10"
-          },
-          "MMCM_CLKOUT1_PHASE": {
-            "value": "90.000"
-          },
-          "NUM_OUT_CLKS": {
-            "value": "2"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
+          "kExtScaleConfigEn": {
+            "value": "false"
           }
         }
       },
@@ -221,10 +224,10 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "RAMP_MAX": {
-            "value": "0x3FFF"
+            "value": "0x0000"
           },
           "RAMP_MIN": {
-            "value": "0x0000"
+            "value": "0x1FFF"
           },
           "RAMP_STEP": {
             "value": "0x0001"
@@ -273,17 +276,9 @@
                 "value": "0",
                 "value_src": "constant"
               },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
+                "value": "DAC_SysClk100_0",
+                "value_src": "default_prop"
               }
             },
             "port_maps": {
@@ -313,17 +308,9 @@
                 "value": "m_axis",
                 "value_src": "constant"
               },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
+                "value": "DAC_SysClk100_0",
+                "value_src": "default_prop"
               }
             }
           },
@@ -358,6 +345,12 @@
       }
     },
     "nets": {
+      "DAC_Clk_0_1": {
+        "ports": [
+          "DAC_Clk_0",
+          "ZmodAWGController_0/DAC_Clk"
+        ]
+      },
       "DAC_EN_dout": {
         "ports": [
           "DAC_EN/dout",
@@ -368,6 +361,15 @@
         "ports": [
           "sZmodDAC_SDIO_0",
           "ZmodAWGController_0/sZmodDAC_SDIO"
+        ]
+      },
+      "SysClk100_0_1": {
+        "ports": [
+          "SysClk100_0",
+          "ZmodAWGController_0/SysClk100",
+          "ZmodAWGController_0/DAC_InIO_Clk",
+          "sawtooth_ramp_gen_0/clk",
+          "proc_sys_reset_0/slowest_sync_clk"
         ]
       },
       "ZmodAWGController_0_ZmodDAC_ClkIO": {
@@ -424,27 +426,6 @@
           "sZmodDAC_SetFS2_0"
         ]
       },
-      "clk_wiz_0_clk_out1": {
-        "ports": [
-          "clk_wiz_0/clk_out1",
-          "ZmodAWGController_0/SysClk100",
-          "ZmodAWGController_0/DAC_InIO_Clk",
-          "proc_sys_reset_0/slowest_sync_clk",
-          "sawtooth_ramp_gen_0/clk"
-        ]
-      },
-      "clk_wiz_0_clk_out2": {
-        "ports": [
-          "clk_wiz_0/clk_out2",
-          "ZmodAWGController_0/DAC_Clk"
-        ]
-      },
-      "clk_wiz_0_locked": {
-        "ports": [
-          "clk_wiz_0/locked",
-          "proc_sys_reset_0/dcm_locked"
-        ]
-      },
       "ilconstant_0_dout": {
         "ports": [
           "ilconstant_0/dout",
@@ -467,14 +448,13 @@
       "reset_rtl_1": {
         "ports": [
           "reset_rtl",
-          "clk_wiz_0/reset",
           "proc_sys_reset_0/ext_reset_in"
         ]
       },
-      "sys_clock_1": {
+      "sawtooth_ramp_gen_0_sync_trigger": {
         "ports": [
-          "sys_clock",
-          "clk_wiz_0/clk_in1"
+          "sawtooth_ramp_gen_0/sync_trigger",
+          "sync_trigger_0"
         ]
       }
     }
