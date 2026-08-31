@@ -37,7 +37,7 @@ set_property -dict { PACKAGE_PIN V13   IOSTANDARD LVCMOS18 } [get_ports {dZmodDA
 #set_property PACKAGE_PIN V13 [get_ports {dZmodDAC_Data_0[13]}]
 #set_property IOSTANDARD LVCMOS18 [get_ports -filter { name =~ dZmodDAC_Data_0*}]
 
-set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS18 } [get_ports {ZmodDAC_Clkin_0}]
+set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS18 } [get_ports {ZmodDAC_ClkIn_0}]
 #set_property PACKAGE_PIN W16 [get_ports ZmodDAC_Clkin_0]
 #set_property IOSTANDARD LVCMOS18 [get_ports ZmodDAC_Clkin_0]
 set_property -dict { PACKAGE_PIN W17   IOSTANDARD LVCMOS18 } [get_ports {ZmodDAC_ClkIO_0}]

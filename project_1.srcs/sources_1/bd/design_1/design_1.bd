@@ -1614,10 +1614,10 @@
             "value": "80.0"
           },
           "CLKOUT1_JITTER": {
-            "value": "265.121"
+            "value": "321.613"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "100"
+            "value": "40"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
             "value": "40"
@@ -1629,10 +1629,10 @@
             "value": "true"
           },
           "CLKOUT3_JITTER": {
-            "value": "208.542"
+            "value": "242.716"
           },
           "CLKOUT3_REQUESTED_OUT_FREQ": {
-            "value": "400"
+            "value": "160"
           },
           "CLKOUT3_REQUESTED_PHASE": {
             "value": "90"
@@ -1641,10 +1641,10 @@
             "value": "true"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "8.000"
+            "value": "20.000"
           },
           "MMCM_CLKOUT2_DIVIDE": {
-            "value": "2"
+            "value": "5"
           },
           "NUM_OUT_CLKS": {
             "value": "3"

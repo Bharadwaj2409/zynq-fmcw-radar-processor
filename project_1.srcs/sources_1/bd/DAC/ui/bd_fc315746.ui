@@ -1,0 +1,53 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.631391",
+   "Default View_TopLeft":"-510,-412",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port port-id_sZmodDAC_CS_0 -pg 1 -lvl 7 -x 1230 -y -160 -defaultsOSRD
+preplace port port-id_sZmodDAC_SCLK_0 -pg 1 -lvl 7 -x 1230 -y -130 -defaultsOSRD
+preplace port port-id_sZmodDAC_SDIO_0 -pg 1 -lvl 7 -x 1230 -y -100 -defaultsOSRD
+preplace port port-id_sZmodDAC_Reset_0 -pg 1 -lvl 7 -x 1230 -y -70 -defaultsOSRD
+preplace port port-id_ZmodDAC_ClkIO_0 -pg 1 -lvl 7 -x 1230 -y -40 -defaultsOSRD
+preplace port port-id_ZmodDAC_ClkIn_0 -pg 1 -lvl 7 -x 1230 -y -10 -defaultsOSRD
+preplace port port-id_sZmodDAC_SetFS1_0 -pg 1 -lvl 7 -x 1230 -y 50 -defaultsOSRD
+preplace port port-id_sZmodDAC_SetFS2_0 -pg 1 -lvl 7 -x 1230 -y 80 -defaultsOSRD
+preplace port port-id_sZmodDAC_EnOut_0 -pg 1 -lvl 7 -x 1230 -y 110 -defaultsOSRD
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x -400 -y 30 -defaultsOSRD
+preplace port port-id_reset_rtl -pg 1 -lvl 0 -x -400 -y 0 -defaultsOSRD
+preplace portBus dZmodDAC_Data_0 -pg 1 -lvl 7 -x 1230 -y 20 -defaultsOSRD
+preplace inst ZmodAWGController_0 -pg 1 -lvl 6 -x 970 -y 0 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 5 -x 660 -y 20 -defaultsOSRD
+preplace inst DAC_EN -pg 1 -lvl 4 -x 450 -y -180 -defaultsOSRD
+preplace inst ilconstant_0 -pg 1 -lvl 3 -x 290 -y -210 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 10 -y -210 -defaultsOSRD
+preplace inst sawtooth_ramp_gen_0 -pg 1 -lvl 2 -x 10 -y 60 -defaultsOSRD
+preplace inst ilconstant_1 -pg 1 -lvl 1 -x -290 -y 140 -defaultsOSRD
+preplace netloc ZmodAWGController_0_sZmodDAC_CS 1 6 1 1140 -160n
+preplace netloc ZmodAWGController_0_sZmodDAC_SCLK 1 6 1 1150 -130n
+preplace netloc Net 1 6 1 1160 -100n
+preplace netloc ZmodAWGController_0_sZmodDAC_Reset 1 6 1 1170 -70n
+preplace netloc ZmodAWGController_0_ZmodDAC_ClkIO 1 6 1 1180 -40n
+preplace netloc ZmodAWGController_0_ZmodDAC_ClkIn 1 6 1 1190 -10n
+preplace netloc ZmodAWGController_0_dZmodDAC_Data 1 6 1 1200 20n
+preplace netloc ZmodAWGController_0_sZmodDAC_SetFS1 1 6 1 1210 50n
+preplace netloc ZmodAWGController_0_sZmodDAC_SetFS2 1 6 1 1140 80n
+preplace netloc ZmodAWGController_0_sZmodDAC_EnOut 1 6 1 N 110
+preplace netloc clk_wiz_0_clk_out1 1 1 5 -170 150 N 150 N 150 N 150 770
+preplace netloc clk_wiz_0_clk_out2 1 5 1 780 0n
+preplace netloc sys_clock_1 1 0 5 NJ 30 -200 140 200 30 N 30 N
+preplace netloc reset_rtl_1 1 0 5 NJ 0 -190 170 210 10 N 10 N
+preplace netloc DAC_EN_dout 1 4 2 NJ -180 760
+preplace netloc ilconstant_0_dout 1 3 3 370J -240 NJ -240 790
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 5 -180 160 190J 100 NJ 100 NJ 100 800
+preplace netloc clk_wiz_0_locked 1 1 5 -160 -70 NJ -70 NJ -70 NJ -70 750
+preplace netloc ilconstant_1_dout 1 1 1 -210 80n
+preplace netloc sawtooth_ramp_gen_0_m_axis 1 2 4 180J -60 NJ -60 NJ -60 N
+levelinfo -pg 1 -400 -290 10 290 450 660 970 1230
+pagesize -pg 1 -db -bbox -sgen -510 -360 1450 340
+"
+}
+{
+   "da_board_cnt":"2"
+}
