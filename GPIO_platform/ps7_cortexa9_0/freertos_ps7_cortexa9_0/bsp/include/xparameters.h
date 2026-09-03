@@ -455,6 +455,10 @@
 #define XPAR_PS7_AFI_3_BASEADDR 0xf800b000
 #define XPAR_PS7_AFI_3_HIGHADDR 0xf800bfff
 
+/* Definitions for peripheral PMODGPIO_0 */
+#define XPAR_PMODGPIO_0_BASEADDR 0x40000000
+#define XPAR_PMODGPIO_0_HIGHADDR 0x40000fff
+
 /*  BOARD definition */
 #define XPS_BOARD_ECLYPSE-Z7
 

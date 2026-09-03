@@ -28,7 +28,7 @@
 					"psDevice": "Auto Detect"
 				},
 				"resetAPU": false,
-				"bitstreamFile": "${workspaceFolder}\\ADC_rtos\\_ide\\bitstream\\ADC_GPIO.bit",
+				"bitstreamFile": "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\ADC_rtos\\_ide\\bitstream\\ADC_GPIO.bit",
 				"zynqInitialization": {
 					"isFsbl": true,
 					"usingFSBL": {

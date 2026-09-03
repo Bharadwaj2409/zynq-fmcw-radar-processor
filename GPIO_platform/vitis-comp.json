@@ -3,8 +3,8 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/radar.xsa",
-    "xsaPathInPlatform": "GPIO_platform/hw/radar.xsa",
+    "xsa": "C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/Bitstream_Files/Hanning_Window.xsa",
+    "xsaPathInPlatform": "GPIO_platform/hw/Hanning_Window.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
     "isCustomFSBL": false,

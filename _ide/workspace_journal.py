@@ -1,4 +1,4 @@
-# 2026-09-03T09:38:32.556311400
+# 2026-09-03T18:15:47.530296400
 import vitis
 
 client = vitis.create_client()
@@ -10,15 +10,7 @@ status = platform.build()
 comp = client.get_component(name="ADC_rtos")
 comp.build()
 
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../radar.xsa")
-
-status = platform.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../radar.xsa")
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../Bitstream_Files/Hanning_Window.xsa")
 
 status = platform.build()
 

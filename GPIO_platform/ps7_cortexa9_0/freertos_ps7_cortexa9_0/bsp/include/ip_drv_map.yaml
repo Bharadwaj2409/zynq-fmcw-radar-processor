@@ -1,3 +1,6 @@
+PmodGPIO_0:
+- PmodGPIO
+- None
 axi_dma_0:
 - axi_dma
 - axidma

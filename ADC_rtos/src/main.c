@@ -442,29 +442,6 @@ int main_thread(void) {
     return 0;
 }
 
-#include "xiicps.h"
-
-#define IIC_DEVICE_ID   XPAR_PS7_I2C_1_DEVICE_ID
-#define POWER_ADDR      0x30  // Onboard Power Controller I2C address
-
-XIicPs Iic;
-
-int SetZmodPower(void) {
-    XIicPs_Config *Config = XIicPs_LookupConfig(IIC_DEVICE_ID);
-    if (!Config) return XST_FAILURE;
-    
-    XIicPs_CfgInitialize(&Iic, Config, Config->BaseAddress);
-    XIicPs_SetSClk(&Iic, 100000);
-
-    // Command to turn on 3.3V on Syzygy A and B
-    u8 SendBuf[2];
-    SendBuf[0] = 0x10; // Output Voltage Register
-    SendBuf[1] = 0x01; // Enable VIO rails
-    
-    XIicPs_MasterSendPolled(&Iic, SendBuf, 2, POWER_ADDR);
-    return XST_SUCCESS;
-}
-
 int main(void) {
     Xil_ICacheEnable();
     Xil_DCacheEnable();

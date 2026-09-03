@@ -453,7 +453,8 @@
       "ilconstant_0_dout": {
         "ports": [
           "ilconstant_0/dout",
-          "ZmodAWGController_0/sTestMode"
+          "ZmodAWGController_0/sTestMode",
+          "proc_sys_reset_0/ext_reset_in"
         ]
       },
       "ilconstant_1_dout": {
@@ -472,8 +473,7 @@
       "reset_rtl_1": {
         "ports": [
           "reset_rtl",
-          "clk_wiz_0/reset",
-          "proc_sys_reset_0/ext_reset_in"
+          "clk_wiz_0/reset"
         ]
       },
       "sys_clock_1": {

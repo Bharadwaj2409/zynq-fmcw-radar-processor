@@ -69,13 +69,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="41"/>
-    <Option Name="WTModelSimExportSim" Val="41"/>
-    <Option Name="WTQuestaExportSim" Val="41"/>
+    <Option Name="WTXSimExportSim" Val="57"/>
+    <Option Name="WTModelSimExportSim" Val="57"/>
+    <Option Name="WTQuestaExportSim" Val="57"/>
     <Option Name="WTIesExportSim" Val="0"/>
     <Option Name="WTVcsExportSim" Val="0"/>
-    <Option Name="WTRivieraExportSim" Val="41"/>
-    <Option Name="WTActivehdlExportSim" Val="41"/>
+    <Option Name="WTRivieraExportSim" Val="57"/>
+    <Option Name="WTActivehdlExportSim" Val="57"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -99,25 +99,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_processing_system7_0_0_1\design_1_processing_system7_0_0.xci">
-          <Proxy FileSetName="design_1_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-      </File>
-      <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/sawtooth_ramp_gen.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -125,23 +106,23 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/DAC/DAC.bd">
+      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="DAC.bd" FileRelPathName="ip\DAC_ZmodAWGController_0_0\DAC_ZmodAWGController_0_0.xci">
-          <Proxy FileSetName="DAC_ZmodAWGController_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_ZmodAWGController_0_0\design_1_ZmodAWGController_0_0.xci">
+          <Proxy FileSetName="design_1_ZmodAWGController_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="DAC.bd" FileRelPathName="ip\DAC_clk_wiz_0_0\DAC_clk_wiz_0_0.xci">
-          <Proxy FileSetName="DAC_clk_wiz_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_processing_system7_0_0_1\design_1_processing_system7_0_0.xci">
+          <Proxy FileSetName="design_1_processing_system7_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="DAC.bd" FileRelPathName="ip\DAC_sawtooth_ramp_gen_0_1\DAC_sawtooth_ramp_gen_0_1.xci">
-          <Proxy FileSetName="DAC_sawtooth_ramp_gen_0_1"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_sawtooth_ramp_gen_0_0\design_1_sawtooth_ramp_gen_0_0.xci">
+          <Proxy FileSetName="design_1_sawtooth_ramp_gen_0_0"/>
         </CompFileExtendedInfo>
       </File>
-      <File Path="$PGENDIR/sources_1/bd/DAC/hdl/DAC_wrapper.v">
+      <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -150,7 +131,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="DAC_wrapper"/>
+        <Option Name="TopModule" Val="design_1_wrapper"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -209,27 +190,21 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="DAC_sawtooth_ramp_gen_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DAC_sawtooth_ramp_gen_0_1" RelGenDir="$PGENDIR/DAC_sawtooth_ramp_gen_0_1">
-      <Config>
-        <Option Name="TopModule" Val="DAC_sawtooth_ramp_gen_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="design_1_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_processing_system7_0_0" RelGenDir="$PGENDIR/design_1_processing_system7_0_0">
       <Config>
         <Option Name="TopModule" Val="design_1_processing_system7_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="DAC_ZmodAWGController_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DAC_ZmodAWGController_0_0" RelGenDir="$PGENDIR/DAC_ZmodAWGController_0_0">
+    <FileSet Name="design_1_sawtooth_ramp_gen_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_sawtooth_ramp_gen_0_0" RelGenDir="$PGENDIR/design_1_sawtooth_ramp_gen_0_0">
       <Config>
-        <Option Name="TopModule" Val="DAC_ZmodAWGController_0_0"/>
+        <Option Name="TopModule" Val="design_1_sawtooth_ramp_gen_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="DAC_clk_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DAC_clk_wiz_0_0" RelGenDir="$PGENDIR/DAC_clk_wiz_0_0">
+    <FileSet Name="design_1_ZmodAWGController_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_ZmodAWGController_0_0" RelGenDir="$PGENDIR/design_1_ZmodAWGController_0_0">
       <Config>
-        <Option Name="TopModule" Val="DAC_clk_wiz_0_0"/>
+        <Option Name="TopModule" Val="design_1_ZmodAWGController_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -263,16 +238,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="DAC_sawtooth_ramp_gen_0_1_synth_1" Type="Ft3:Synth" SrcSet="DAC_sawtooth_ramp_gen_0_1" Part="xc7z020clg484-1" ConstrsSet="DAC_sawtooth_ramp_gen_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/DAC_sawtooth_ramp_gen_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DAC_sawtooth_ramp_gen_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DAC_sawtooth_ramp_gen_0_1_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="design_1_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_processing_system7_0_0" Part="xc7z020clg484-1" ConstrsSet="design_1_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_processing_system7_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_processing_system7_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
@@ -285,7 +250,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="DAC_ZmodAWGController_0_0_synth_1" Type="Ft3:Synth" SrcSet="DAC_ZmodAWGController_0_0" Part="xc7z020clg484-1" ConstrsSet="DAC_ZmodAWGController_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/DAC_ZmodAWGController_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DAC_ZmodAWGController_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DAC_ZmodAWGController_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="design_1_sawtooth_ramp_gen_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_sawtooth_ramp_gen_0_0" Part="xc7z020clg484-1" ConstrsSet="design_1_sawtooth_ramp_gen_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_sawtooth_ramp_gen_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_sawtooth_ramp_gen_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_sawtooth_ramp_gen_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -297,7 +262,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="DAC_clk_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="DAC_clk_wiz_0_0" Part="xc7z020clg484-1" ConstrsSet="DAC_clk_wiz_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/DAC_clk_wiz_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DAC_clk_wiz_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DAC_clk_wiz_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="design_1_ZmodAWGController_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_ZmodAWGController_0_0" Part="xc7z020clg484-1" ConstrsSet="design_1_ZmodAWGController_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_ZmodAWGController_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_ZmodAWGController_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_ZmodAWGController_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -327,23 +292,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="DAC_sawtooth_ramp_gen_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="DAC_sawtooth_ramp_gen_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="DAC_sawtooth_ramp_gen_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DAC_sawtooth_ramp_gen_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DAC_sawtooth_ramp_gen_0_1_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="design_1_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_1_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_processing_system7_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_processing_system7_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
@@ -363,7 +311,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="DAC_ZmodAWGController_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="DAC_ZmodAWGController_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="DAC_ZmodAWGController_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DAC_ZmodAWGController_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DAC_ZmodAWGController_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="design_1_sawtooth_ramp_gen_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_1_sawtooth_ramp_gen_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_sawtooth_ramp_gen_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_sawtooth_ramp_gen_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_sawtooth_ramp_gen_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>
@@ -382,7 +330,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="DAC_clk_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="DAC_clk_wiz_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="DAC_clk_wiz_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DAC_clk_wiz_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DAC_clk_wiz_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="design_1_ZmodAWGController_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_1_ZmodAWGController_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_ZmodAWGController_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_ZmodAWGController_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_ZmodAWGController_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
           <Desc>Default settings for Implementation.</Desc>

@@ -1,14 +1,13 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x6BE4775409CD2640",
+      "boundary_crc": "0xB1FAA46C58CF3ECB",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.2",
-      "validated": "true"
+      "tool_version": "2025.2"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -50,7 +49,12 @@
       "sr_tlast": "",
       "adc_ch1_slice": "",
       "ilconcat_0": "",
-      "ilconstant_0": ""
+      "ilconstant_0": "",
+      "ZmodAWGController_0": "",
+      "sawtooth_ramp_gen_0": "",
+      "ilconstant_1": "",
+      "ilconstant_2": "",
+      "ilconstant_3": ""
     },
     "interface_ports": {
       "DDR": {
@@ -277,24 +281,8 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "CLK_DOMAIN": {
-            "value": "design_1_sys_clock",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
             "value": "125000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
           }
         }
       },
@@ -308,24 +296,8 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "CLK_DOMAIN": {
-            "value": "design_1_ZmodDcoClk_0",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
             "value": "40000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
           }
         }
       },
@@ -380,14 +352,45 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
         }
+      },
+      "sZmodDAC_CS_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_SCLK_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_SDIO_0": {
+        "direction": "IO"
+      },
+      "sZmodDAC_Reset_0": {
+        "type": "rst",
+        "direction": "O"
+      },
+      "ZmodDAC_ClkIO_0": {
+        "type": "clk",
+        "direction": "O"
+      },
+      "ZmodDAC_ClkIn_0": {
+        "type": "clk",
+        "direction": "O"
+      },
+      "dZmodDAC_Data_0": {
+        "direction": "O",
+        "left": "13",
+        "right": "0"
+      },
+      "sZmodDAC_SetFS1_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_SetFS2_0": {
+        "direction": "O"
+      },
+      "sZmodDAC_EnOut_0": {
+        "direction": "O"
       }
     },
     "components": {
@@ -3698,7 +3701,7 @@
             "value": "10"
           },
           "SCLR": {
-            "value": "true"
+            "value": "false"
           },
           "Sync_Threshold_Output": {
             "value": "true"
@@ -3824,6 +3827,174 @@
             "value": "16"
           }
         }
+      },
+      "ZmodAWGController_0": {
+        "vlnv": "digilent.com:user:ZmodAWGController:1.1",
+        "ip_revision": "4",
+        "xci_name": "design_1_ZmodAWGController_0_0",
+        "xci_path": "ip\\design_1_ZmodAWGController_0_0\\design_1_ZmodAWGController_0_0.xci",
+        "inst_hier_path": "ZmodAWGController_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "kCh1ScaleStatic": {
+            "value": "\"1\""
+          },
+          "kCh2ScaleStatic": {
+            "value": "\"1\""
+          }
+        }
+      },
+      "sawtooth_ramp_gen_0": {
+        "vlnv": "xilinx.com:module_ref:sawtooth_ramp_gen:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_sawtooth_ramp_gen_0_0",
+        "xci_path": "ip\\design_1_sawtooth_ramp_gen_0_0\\design_1_sawtooth_ramp_gen_0_0.xci",
+        "inst_hier_path": "sawtooth_ramp_gen_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "RAMP_MAX": {
+            "value": "0x3FFF"
+          },
+          "RAMP_MIN": {
+            "value": "0x0000"
+          },
+          "RAMP_STEP": {
+            "value": "0x0001"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sawtooth_ramp_gen",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "m_axis": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "TDATA_NUM_BYTES": {
+                "value": "4",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "m_axis_tdata",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "m_axis_tvalid",
+                "direction": "O"
+              },
+              "TREADY": {
+                "physical_name": "m_axis_tready",
+                "direction": "I"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "m_axis",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "sync_trigger": {
+            "direction": "O"
+          }
+        }
+      },
+      "ilconstant_1": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "1"
+          }
+        }
+      },
+      "ilconstant_2": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "ilconstant_3": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0"
       }
     },
     "interface_nets": {
@@ -3899,6 +4070,12 @@
           "axi_gpio_1/S_AXI"
         ]
       },
+      "sawtooth_ramp_gen_0_m_axis": {
+        "interface_ports": [
+          "sawtooth_ramp_gen_0/m_axis",
+          "ZmodAWGController_0/InputDataStream"
+        ]
+      },
       "xfft_range_M_AXIS_DATA": {
         "interface_ports": [
           "xfft_range/M_AXIS_DATA",
@@ -3911,6 +4088,12 @@
         "ports": [
           "sZmodADC_SDIO_0",
           "ZmodADC_Controller_0/sZmodADC_SDIO"
+        ]
+      },
+      "Net2": {
+        "ports": [
+          "sZmodDAC_SDIO_0",
+          "ZmodAWGController_0/sZmodDAC_SDIO"
         ]
       },
       "ZmodADC_Controller_0_ZmodAdcClkIn_n": {
@@ -4003,6 +4186,60 @@
           "sZmodRelayComL_0"
         ]
       },
+      "ZmodAWGController_0_ZmodDAC_ClkIO": {
+        "ports": [
+          "ZmodAWGController_0/ZmodDAC_ClkIO",
+          "ZmodDAC_ClkIO_0"
+        ]
+      },
+      "ZmodAWGController_0_ZmodDAC_ClkIn": {
+        "ports": [
+          "ZmodAWGController_0/ZmodDAC_ClkIn",
+          "ZmodDAC_ClkIn_0"
+        ]
+      },
+      "ZmodAWGController_0_dZmodDAC_Data": {
+        "ports": [
+          "ZmodAWGController_0/dZmodDAC_Data",
+          "dZmodDAC_Data_0"
+        ]
+      },
+      "ZmodAWGController_0_sZmodDAC_CS": {
+        "ports": [
+          "ZmodAWGController_0/sZmodDAC_CS",
+          "sZmodDAC_CS_0"
+        ]
+      },
+      "ZmodAWGController_0_sZmodDAC_EnOut": {
+        "ports": [
+          "ZmodAWGController_0/sZmodDAC_EnOut",
+          "sZmodDAC_EnOut_0"
+        ]
+      },
+      "ZmodAWGController_0_sZmodDAC_Reset": {
+        "ports": [
+          "ZmodAWGController_0/sZmodDAC_Reset",
+          "sZmodDAC_Reset_0"
+        ]
+      },
+      "ZmodAWGController_0_sZmodDAC_SCLK": {
+        "ports": [
+          "ZmodAWGController_0/sZmodDAC_SCLK",
+          "sZmodDAC_SCLK_0"
+        ]
+      },
+      "ZmodAWGController_0_sZmodDAC_SetFS1": {
+        "ports": [
+          "ZmodAWGController_0/sZmodDAC_SetFS1",
+          "sZmodDAC_SetFS1_0"
+        ]
+      },
+      "ZmodAWGController_0_sZmodDAC_SetFS2": {
+        "ports": [
+          "ZmodAWGController_0/sZmodDAC_SetFS2",
+          "sZmodDAC_SetFS2_0"
+        ]
+      },
       "ZmodDcoClk_0_1": {
         "ports": [
           "ZmodDcoClk_0",
@@ -4057,7 +4294,10 @@
       },
       "clk_wiz_0_clk_out2": {
         "ports": [
-          "clk_wiz_0/clk_out2"
+          "clk_wiz_0/clk_out2",
+          "ZmodAWGController_0/SysClk100",
+          "ZmodAWGController_0/DAC_InIO_Clk",
+          "sawtooth_ramp_gen_0/clk"
         ]
       },
       "clk_wiz_0_clk_out3": {
@@ -4068,7 +4308,8 @@
       },
       "clk_wiz_0_clk_out4": {
         "ports": [
-          "clk_wiz_0/clk_out4"
+          "clk_wiz_0/clk_out4",
+          "ZmodAWGController_0/DAC_Clk"
         ]
       },
       "clk_wiz_0_locked": {
@@ -4125,6 +4366,24 @@
           "ilconcat_0/In1"
         ]
       },
+      "ilconstant_1_dout": {
+        "ports": [
+          "ilconstant_1/dout",
+          "sawtooth_ramp_gen_0/enable"
+        ]
+      },
+      "ilconstant_2_dout": {
+        "ports": [
+          "ilconstant_2/dout",
+          "ZmodAWGController_0/sTestMode"
+        ]
+      },
+      "ilconstant_3_dout": {
+        "ports": [
+          "ilconstant_3/dout",
+          "ZmodAWGController_0/sDAC_EnIn"
+        ]
+      },
       "mult_gen_0_P": {
         "ports": [
           "mult_gen_0/P",
@@ -4172,7 +4431,9 @@
           "ZmodADC_Controller_0/aRst_n",
           "axis_subset_converter_0/aresetn",
           "xfft_range/aresetn",
-          "axis_data_fifo_0/s_axis_aresetn"
+          "axis_data_fifo_0/s_axis_aresetn",
+          "ZmodAWGController_0/aRst_n",
+          "sawtooth_ramp_gen_0/rst_n"
         ]
       },
       "rst_ps7_0_100M_peripheral_aresetn": {
