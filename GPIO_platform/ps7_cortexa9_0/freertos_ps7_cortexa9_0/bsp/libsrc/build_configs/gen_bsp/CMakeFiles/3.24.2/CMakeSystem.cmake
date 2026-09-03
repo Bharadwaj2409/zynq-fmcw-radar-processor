@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.26200")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("C:/Users/vempa/Eclypse-Z7/project_1/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/cortexa9_toolchain.cmake")
+include("C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/cortexa9_toolchain.cmake")
 
 set(CMAKE_SYSTEM "FreeRTOS")
 set(CMAKE_SYSTEM_NAME "FreeRTOS")

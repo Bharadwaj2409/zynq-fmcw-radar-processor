@@ -1,118 +1,120 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.253489",
-   "Default View_TopLeft":"-217,-323",
+   "Default View_ScaleFactor":"0.330049",
+   "Default View_TopLeft":"-215,-142",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 15 -x 4450 -y 610 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 15 -x 4450 -y 640 -defaultsOSRD
-preplace port btn_2bits -pg 1 -lvl 15 -x 4450 -y 300 -defaultsOSRD
-preplace port btn_2bits_0 -pg 1 -lvl 15 -x 4450 -y 160 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 15 -x 4460 -y 610 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 15 -x 4460 -y 640 -defaultsOSRD
+preplace port btn_2bits -pg 1 -lvl 15 -x 4460 -y 300 -defaultsOSRD
+preplace port btn_2bits_0 -pg 1 -lvl 15 -x 4460 -y 160 -defaultsOSRD
 preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
-preplace port port-id_ZmodAdcClkIn_n_0 -pg 1 -lvl 15 -x 4450 -y 820 -defaultsOSRD
-preplace port port-id_ZmodAdcClkIn_p_0 -pg 1 -lvl 15 -x 4450 -y 790 -defaultsOSRD
+preplace port port-id_ZmodAdcClkIn_n_0 -pg 1 -lvl 15 -x 4460 -y 820 -defaultsOSRD
+preplace port port-id_ZmodAdcClkIn_p_0 -pg 1 -lvl 15 -x 4460 -y 790 -defaultsOSRD
 preplace port port-id_ZmodDcoClk_0 -pg 1 -lvl 0 -x 0 -y 1030 -defaultsOSRD
-preplace port port-id_iZmodSync_0 -pg 1 -lvl 15 -x 4450 -y 850 -defaultsOSRD
-preplace port port-id_sZmodADC_CS_0 -pg 1 -lvl 15 -x 4450 -y 910 -defaultsOSRD
-preplace port port-id_sZmodADC_SDIO_0 -pg 1 -lvl 15 -x 4450 -y 880 -defaultsOSRD
-preplace port port-id_sZmodADC_Sclk_0 -pg 1 -lvl 15 -x 4450 -y 940 -defaultsOSRD
-preplace port port-id_sZmodCh1CouplingH_0 -pg 1 -lvl 15 -x 4450 -y 970 -defaultsOSRD
-preplace port port-id_sZmodCh1CouplingL_0 -pg 1 -lvl 15 -x 4450 -y 1000 -defaultsOSRD
-preplace port port-id_sZmodCh1GainH_0 -pg 1 -lvl 15 -x 4450 -y 1090 -defaultsOSRD
-preplace port port-id_sZmodCh1GainL_0 -pg 1 -lvl 15 -x 4450 -y 1120 -defaultsOSRD
-preplace port port-id_sZmodCh2CouplingH_0 -pg 1 -lvl 15 -x 4450 -y 1030 -defaultsOSRD
-preplace port port-id_sZmodCh2CouplingL_0 -pg 1 -lvl 15 -x 4450 -y 1060 -defaultsOSRD
-preplace port port-id_sZmodCh2GainH_0 -pg 1 -lvl 15 -x 4450 -y 1150 -defaultsOSRD
-preplace port port-id_sZmodCh2GainL_0 -pg 1 -lvl 15 -x 4450 -y 1180 -defaultsOSRD
-preplace port port-id_sZmodRelayComH_0 -pg 1 -lvl 15 -x 4450 -y 1210 -defaultsOSRD
-preplace port port-id_sZmodRelayComL_0 -pg 1 -lvl 15 -x 4450 -y 1240 -defaultsOSRD
+preplace port port-id_iZmodSync_0 -pg 1 -lvl 15 -x 4460 -y 850 -defaultsOSRD
+preplace port port-id_sZmodADC_CS_0 -pg 1 -lvl 15 -x 4460 -y 910 -defaultsOSRD
+preplace port port-id_sZmodADC_SDIO_0 -pg 1 -lvl 15 -x 4460 -y 880 -defaultsOSRD
+preplace port port-id_sZmodADC_Sclk_0 -pg 1 -lvl 15 -x 4460 -y 940 -defaultsOSRD
+preplace port port-id_sZmodCh1CouplingH_0 -pg 1 -lvl 15 -x 4460 -y 970 -defaultsOSRD
+preplace port port-id_sZmodCh1CouplingL_0 -pg 1 -lvl 15 -x 4460 -y 1000 -defaultsOSRD
+preplace port port-id_sZmodCh1GainH_0 -pg 1 -lvl 15 -x 4460 -y 1090 -defaultsOSRD
+preplace port port-id_sZmodCh1GainL_0 -pg 1 -lvl 15 -x 4460 -y 1120 -defaultsOSRD
+preplace port port-id_sZmodCh2CouplingH_0 -pg 1 -lvl 15 -x 4460 -y 1030 -defaultsOSRD
+preplace port port-id_sZmodCh2CouplingL_0 -pg 1 -lvl 15 -x 4460 -y 1060 -defaultsOSRD
+preplace port port-id_sZmodCh2GainH_0 -pg 1 -lvl 15 -x 4460 -y 1150 -defaultsOSRD
+preplace port port-id_sZmodCh2GainL_0 -pg 1 -lvl 15 -x 4460 -y 1180 -defaultsOSRD
+preplace port port-id_sZmodRelayComH_0 -pg 1 -lvl 15 -x 4460 -y 1210 -defaultsOSRD
+preplace port port-id_sZmodRelayComL_0 -pg 1 -lvl 15 -x 4460 -y 1240 -defaultsOSRD
 preplace port port-id_reset_rtl -pg 1 -lvl 0 -x 0 -y 820 -defaultsOSRD
 preplace portBus dZmodADC_Data_0 -pg 1 -lvl 0 -x 0 -y 1060 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 14 -x 4130 -y 700 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 10 -x 2660 -y 260 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 14 -x 4170 -y 700 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 10 -x 2700 -y 260 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 830 -defaultsOSRD
 preplace inst rst_clk_wiz_40M -pg 1 -lvl 2 -x 380 -y 730 -defaultsOSRD
 preplace inst ZmodADC_Controller_0 -pg 1 -lvl 3 -x 760 -y 960 -defaultsOSRD
 preplace inst const_adc_en -pg 1 -lvl 2 -x 380 -y 890 -defaultsOSRD
 preplace inst const_adc_test -pg 1 -lvl 2 -x 380 -y 990 -defaultsOSRD
 preplace inst axis_subset_converter_0 -pg 1 -lvl 4 -x 1170 -y 770 -defaultsOSRD
-preplace inst xfft_range -pg 1 -lvl 10 -x 2660 -y 480 -defaultsOSRD
-preplace inst fft_config_const -pg 1 -lvl 9 -x 2310 -y 210 -defaultsOSRD
-preplace inst fft_config_valid -pg 1 -lvl 9 -x 2310 -y 670 -defaultsOSRD
-preplace inst axis_data_fifo_0 -pg 1 -lvl 11 -x 3050 -y 450 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 12 -x 3410 -y 390 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 11 -x 3050 -y 180 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 13 -x 3740 -y 430 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 14 -x 4130 -y 300 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 14 -x 4130 -y 160 -defaultsOSRD
+preplace inst xfft_range -pg 1 -lvl 10 -x 2700 -y 480 -defaultsOSRD
+preplace inst fft_config_const -pg 1 -lvl 9 -x 2330 -y 210 -defaultsOSRD
+preplace inst fft_config_valid -pg 1 -lvl 9 -x 2330 -y 670 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 11 -x 3100 -y 450 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 12 -x 3440 -y 390 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 11 -x 3100 -y 180 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 13 -x 3770 -y 430 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 14 -x 4170 -y 300 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 14 -x 4170 -y 160 -defaultsOSRD
 preplace inst c_counter_binary_0 -pg 1 -lvl 5 -x 1470 -y 640 -defaultsOSRD
-preplace inst win_rom_0 -pg 1 -lvl 6 -x 1680 -y 650 -defaultsOSRD
-preplace inst mult_gen_0 -pg 1 -lvl 7 -x 1890 -y 630 -defaultsOSRD
-preplace inst win_slice_0 -pg 1 -lvl 8 -x 2090 -y 630 -defaultsOSRD
-preplace inst sr_tvalid -pg 1 -lvl 9 -x 2310 -y 560 -defaultsOSRD
-preplace inst sr_tlast -pg 1 -lvl 9 -x 2310 -y 440 -defaultsOSRD
-preplace inst adc_ch1_slice -pg 1 -lvl 6 -x 1680 -y 770 -defaultsOSRD
-preplace inst ilconcat_0 -pg 1 -lvl 9 -x 2310 -y 320 -defaultsOSRD
-preplace inst ilconstant_0 -pg 1 -lvl 8 -x 2090 -y 330 -defaultsOSRD
-preplace netloc Net 1 3 12 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 4400J
-preplace netloc ZmodADC_Controller_0_ZmodAdcClkIn_n 1 3 12 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 4380J
-preplace netloc ZmodADC_Controller_0_ZmodAdcClkIn_p 1 3 12 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 4370J
-preplace netloc ZmodADC_Controller_0_iZmodSync 1 3 12 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 4390J
-preplace netloc ZmodADC_Controller_0_sZmodADC_CS 1 3 12 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 4410J
-preplace netloc ZmodADC_Controller_0_sZmodADC_Sclk 1 3 12 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 4420J
-preplace netloc ZmodADC_Controller_0_sZmodCh1CouplingH 1 3 12 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 4430J
-preplace netloc ZmodADC_Controller_0_sZmodCh1CouplingL 1 3 12 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 4350J
-preplace netloc ZmodADC_Controller_0_sZmodCh1GainH 1 3 12 980J 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ
-preplace netloc ZmodADC_Controller_0_sZmodCh1GainL 1 3 12 970J 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ 1120 NJ
+preplace inst win_rom_0 -pg 1 -lvl 6 -x 1700 -y 650 -defaultsOSRD
+preplace inst mult_gen_0 -pg 1 -lvl 7 -x 1900 -y 630 -defaultsOSRD
+preplace inst win_slice_0 -pg 1 -lvl 8 -x 2100 -y 630 -defaultsOSRD
+preplace inst sr_tvalid -pg 1 -lvl 9 -x 2330 -y 560 -defaultsOSRD
+preplace inst sr_tlast -pg 1 -lvl 9 -x 2330 -y 440 -defaultsOSRD
+preplace inst adc_ch1_slice -pg 1 -lvl 6 -x 1700 -y 770 -defaultsOSRD
+preplace inst ilconcat_0 -pg 1 -lvl 9 -x 2330 -y 320 -defaultsOSRD
+preplace inst ilconstant_0 -pg 1 -lvl 8 -x 2100 -y 330 -defaultsOSRD
+preplace netloc Net 1 3 12 950J 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 4440J
+preplace netloc ZmodADC_Controller_0_ZmodAdcClkIn_n 1 3 12 930J 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 NJ 880 4420J
+preplace netloc ZmodADC_Controller_0_ZmodAdcClkIn_p 1 3 12 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 NJ 870 4410J
+preplace netloc ZmodADC_Controller_0_iZmodSync 1 3 12 970J 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 NJ 890 4430J
+preplace netloc ZmodADC_Controller_0_sZmodADC_CS 1 3 12 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 4390J
+preplace netloc ZmodADC_Controller_0_sZmodADC_Sclk 1 3 12 940J 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 NJ 990 4410J
+preplace netloc ZmodADC_Controller_0_sZmodCh1CouplingH 1 3 12 930J 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 4430J
+preplace netloc ZmodADC_Controller_0_sZmodCh1CouplingL 1 3 12 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 4440J
+preplace netloc ZmodADC_Controller_0_sZmodCh1GainH 1 3 12 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 NJ 1070 4440J
+preplace netloc ZmodADC_Controller_0_sZmodCh1GainL 1 3 12 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 NJ 1090 4390J
 preplace netloc ZmodADC_Controller_0_sZmodCh2CouplingH 1 3 12 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ 1030 NJ
-preplace netloc ZmodADC_Controller_0_sZmodCh2CouplingL 1 3 12 980J 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ 1060 NJ
-preplace netloc ZmodADC_Controller_0_sZmodCh2GainH 1 3 12 960J 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ
-preplace netloc ZmodADC_Controller_0_sZmodCh2GainL 1 3 12 950J 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ
-preplace netloc ZmodADC_Controller_0_sZmodRelayComH 1 3 12 940J 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ
-preplace netloc ZmodADC_Controller_0_sZmodRelayComL 1 3 12 930J 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ
+preplace netloc ZmodADC_Controller_0_sZmodCh2CouplingL 1 3 12 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 4390J
+preplace netloc ZmodADC_Controller_0_sZmodCh2GainH 1 3 12 950J 960 NJ 960 1590J 1140 NJ 1140 NJ 1140 NJ 1140 NJ 1140 NJ 1140 NJ 1140 NJ 1140 NJ 1140 4440J
+preplace netloc ZmodADC_Controller_0_sZmodCh2GainL 1 3 12 960J 970 NJ 970 1580J 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ
+preplace netloc ZmodADC_Controller_0_sZmodRelayComH 1 3 12 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 NJ 1150 4390J
+preplace netloc ZmodADC_Controller_0_sZmodRelayComL 1 3 12 970J 980 NJ 980 1570J 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ
 preplace netloc ZmodDcoClk_0_1 1 0 3 NJ 1030 210J 1050 550J
-preplace netloc adc_ch1_slice_Dout 1 6 1 1800 630n
+preplace netloc adc_ch1_slice_Dout 1 6 1 1810 630n
 preplace netloc axis_subset_converter_0_m_axis_tdata 1 4 2 NJ 770 NJ
-preplace netloc axis_subset_converter_0_m_axis_tvalid 1 4 5 1370 550 NJ 550 NJ 550 NJ 550 N
+preplace netloc axis_subset_converter_0_m_axis_tvalid 1 4 5 1360 540 NJ 540 NJ 540 NJ 540 2220
 preplace netloc c_counter_binary_0_Q 1 5 1 N 650
-preplace netloc c_counter_binary_0_THRESH0 1 5 4 1570 430 NJ 430 NJ 430 NJ
-preplace netloc clk_wiz_0_clk_out1 1 1 10 200 620 590 620 980 620 1360 540 NJ 540 1790 710 NJ 710 2210 730 2440 620 2890
+preplace netloc c_counter_binary_0_THRESH0 1 5 4 1590 430 NJ 430 NJ 430 NJ
+preplace netloc clk_wiz_0_clk_out1 1 1 10 200 630 590 630 980 620 1370 560 NJ 560 1810 550 NJ 550 2210 150 2430 620 2940
 preplace netloc clk_wiz_0_clk_out3 1 1 2 NJ 830 560
 preplace netloc clk_wiz_0_locked 1 1 1 210 770n
 preplace netloc const_adc_en_dout 1 2 1 550J 890n
 preplace netloc const_adc_test_dout 1 2 1 NJ 990
-preplace netloc dZmodADC_Data_0_1 1 0 3 NJ 1060 NJ 1060 590J
+preplace netloc dZmodADC_Data_0_1 1 0 3 NJ 1060 NJ 1060 580J
 preplace netloc dist_mem_gen_0_spo 1 6 1 NJ 650
-preplace netloc fft_config_const_dout 1 9 1 2420 210n
-preplace netloc fft_config_valid_dout 1 9 1 2420J 520n
-preplace netloc ilconcat_0_dout 1 9 1 2410 320n
+preplace netloc fft_config_const_dout 1 9 1 2450 210n
+preplace netloc fft_config_valid_dout 1 9 1 2490J 520n
+preplace netloc ilconcat_0_dout 1 9 1 2440 320n
 preplace netloc ilconstant_0_dout 1 8 1 NJ 330
 preplace netloc mult_gen_0_P 1 7 1 NJ 630
-preplace netloc processing_system7_0_FCLK_CLK0 1 9 6 2450 160 2870 540 3240 490 3580 300 3900 850 4360
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 14 210 630 580J 690 960J 860 NJ 860 NJ 860 NJ 860 NJ 860 NJ 860 2430 860 NJ 860 NJ 860 NJ 860 NJ 860 4350
+preplace netloc processing_system7_0_FCLK_CLK0 1 9 6 2490 140 2930 540 3270 500 3610 580 3940 850 4390
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 14 210 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 2480 160 2910J 570 NJ 570 NJ 570 3950J 540 4400
 preplace netloc reset_rtl_1 1 0 1 NJ 820
-preplace netloc rst_clk_wiz_40M_peripheral_aresetn 1 2 9 570 680 970 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 2450 630 2880
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 10 4 2880 360 3230 290 3590 310 3910
+preplace netloc rst_clk_wiz_40M_peripheral_aresetn 1 2 9 580 690 940 130 NJ 130 NJ 130 NJ 130 NJ 130 NJ 130 2470 150 2920
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 10 4 2940 360 3250 490 3620 560 3920
 preplace netloc sr_tlast_Q 1 9 1 N 440
-preplace netloc sr_tvalid_Q 1 9 1 2410 460n
+preplace netloc sr_tvalid_Q 1 9 1 2460 460n
 preplace netloc sys_clock_1 1 0 1 20J 840n
-preplace netloc win_slice_0_Dout 1 8 1 2200 310n
+preplace netloc win_slice_0_Dout 1 8 1 2230 310n
+preplace netloc clk_wiz_0_clk_out2 1 1 1 N 810
+preplace netloc clk_wiz_0_clk_out4 1 1 1 N 850
 preplace netloc ZmodADC_Controller_0_DataStream 1 3 1 N 750
 preplace netloc axi_dma_0_M_AXI_S2MM 1 12 1 N 370
 preplace netloc axi_gpio_0_GPIO 1 14 1 NJ 300
 preplace netloc axi_gpio_1_GPIO 1 14 1 NJ 160
-preplace netloc axi_mem_intercon_M00_AXI 1 13 1 3890 430n
-preplace netloc axis_data_fifo_0_M_AXIS 1 11 1 3200 370n
+preplace netloc axi_mem_intercon_M00_AXI 1 13 1 3930 430n
+preplace netloc axis_data_fifo_0_M_AXIS 1 11 1 3260 370n
 preplace netloc processing_system7_0_DDR 1 14 1 NJ 610
-preplace netloc processing_system7_0_FIXED_IO 1 14 1 4360J 630n
-preplace netloc processing_system7_0_M_AXI_GP0 1 10 5 2900 550 NJ 550 NJ 550 NJ 550 4350
-preplace netloc ps7_0_axi_periph_M00_AXI 1 11 1 3220 150n
-preplace netloc ps7_0_axi_periph_M02_AXI 1 11 3 3210 280 NJ 280 NJ
-preplace netloc ps7_0_axi_periph_M03_AXI 1 11 3 3200 140 NJ 140 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 14 1 4410J 630n
+preplace netloc processing_system7_0_M_AXI_GP0 1 10 5 2950 550 NJ 550 NJ 550 NJ 550 4390
+preplace netloc ps7_0_axi_periph_M00_AXI 1 11 1 3270 150n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 11 3 3260 280 NJ 280 NJ
+preplace netloc ps7_0_axi_periph_M03_AXI 1 11 3 3250 140 NJ 140 NJ
 preplace netloc xfft_range_M_AXIS_DATA 1 10 1 N 420
-levelinfo -pg 1 0 110 380 760 1170 1470 1680 1890 2090 2310 2660 3050 3410 3740 4130 4450
-pagesize -pg 1 -db -bbox -sgen -220 0 4660 1260
+levelinfo -pg 1 0 110 380 760 1170 1470 1700 1900 2100 2330 2700 3100 3440 3770 4170 4460
+pagesize -pg 1 -db -bbox -sgen -220 0 4670 1260
 "
 }
 {

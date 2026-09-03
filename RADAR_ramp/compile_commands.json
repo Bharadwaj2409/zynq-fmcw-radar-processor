@@ -1,6 +1,6 @@
 [
   {
-    "directory": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp",
+    "directory": "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\RADAR_ramp",
     "arguments": [
       "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
       "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
@@ -8,20 +8,20 @@
       "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
       "-fhlstoplevel=fmcw_ramp_gen",
       "-c",
-      "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\fmcw_ramp_gen.cpp"
+      "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\RADAR_ramp\\fmcw_ramp_gen.cpp"
     ],
-    "file": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\fmcw_ramp_gen.cpp"
+    "file": "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\RADAR_ramp\\fmcw_ramp_gen.cpp"
   },
   {
-    "directory": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp",
+    "directory": "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\RADAR_ramp",
     "arguments": [
       "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
       "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
       "-fhls-tb",
       "-hls-sim-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\include",
       "-c",
-      "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\tb_fmcw_ramp_gen.cpp"
+      "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\RADAR_ramp\\tb_fmcw_ramp_gen.cpp"
     ],
-    "file": "C:\\Users\\vempa\\Eclypse-Z7\\project_1\\RADAR_ramp\\tb_fmcw_ramp_gen.cpp"
+    "file": "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor\\RADAR_ramp\\tb_fmcw_ramp_gen.cpp"
   }
 ]

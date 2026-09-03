@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vempa/Eclypse-Z7/project_1/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/standalone/src/common
+# Install script for directory: C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/standalone/src/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/vempa/Eclypse-Z7/project_1/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/common/intr/cmake_install.cmake")
+  include("C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/common/intr/cmake_install.cmake")
 endif()
 

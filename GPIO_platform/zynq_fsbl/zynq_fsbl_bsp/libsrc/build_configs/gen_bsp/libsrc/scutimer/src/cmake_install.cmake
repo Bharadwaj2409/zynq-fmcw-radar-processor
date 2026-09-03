@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vempa/Eclypse-Z7/project_1/GPIO_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/scutimer/src
+# Install script for directory: C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/GPIO_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/scutimer/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

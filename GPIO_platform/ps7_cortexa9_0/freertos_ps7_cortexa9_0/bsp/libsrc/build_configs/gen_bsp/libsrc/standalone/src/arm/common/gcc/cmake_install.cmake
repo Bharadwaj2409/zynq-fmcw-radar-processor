@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vempa/Eclypse-Z7/project_1/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/standalone/src/arm/common/gcc
+# Install script for directory: C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/standalone/src/arm/common/gcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

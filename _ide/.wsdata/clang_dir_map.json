@@ -1,6 +1,7 @@
 {
-  "workspaceRoot": "C:\\Users\\vempa\\Eclypse-Z7\\project_1",
+  "workspaceRoot": "C:\\Users\\vempa\\Eclypse-Z7\\zynq-fmcw-radar-processor",
   "mapping": {
+    "RADAR_ramp\\fmcw_ramp_gen.h": "RADAR_ramp",
     "RADAR_ramp\\tb_fmcw_ramp_gen.cpp": "RADAR_ramp",
     "RADAR_ramp\\fmcw_ramp_gen.cpp": "RADAR_ramp"
   }

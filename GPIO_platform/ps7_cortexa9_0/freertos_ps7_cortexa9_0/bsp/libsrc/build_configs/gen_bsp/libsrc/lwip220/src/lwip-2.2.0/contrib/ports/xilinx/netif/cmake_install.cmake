@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vempa/Eclypse-Z7/project_1/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif
+# Install script for directory: C:/Users/vempa/Eclypse-Z7/zynq-fmcw-radar-processor/GPIO_platform/ps7_cortexa9_0/freertos_ps7_cortexa9_0/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -52,7 +52,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\AMDDesignTools\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\vempa\Eclypse-Z7\project_1\GPIO_platform\zynq_fsbl -BC:\Users\vempa\Eclypse-Z7\project_1\GPIO_platform\zynq_fsbl\build
+  command = C:\AMDDesignTools\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\vempa\Eclypse-Z7\zynq-fmcw-radar-processor\GPIO_platform\zynq_fsbl -BC:\Users\vempa\Eclypse-Z7\zynq-fmcw-radar-processor\GPIO_platform\zynq_fsbl\build
   description = Re-running CMake...
   generator = 1
 
