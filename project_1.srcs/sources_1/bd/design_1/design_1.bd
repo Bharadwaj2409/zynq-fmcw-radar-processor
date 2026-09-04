@@ -1,13 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xB1FAA46C58CF3ECB",
+      "boundary_crc": "0x5AC590EC44E42F48",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.2"
+      "tool_version": "2025.2",
+      "validated": "true"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -41,20 +42,12 @@
       },
       "axi_gpio_0": "",
       "axi_gpio_1": "",
-      "c_counter_binary_0": "",
-      "win_rom_0": "",
-      "mult_gen_0": "",
-      "win_slice_0": "",
-      "sr_tvalid": "",
-      "sr_tlast": "",
-      "adc_ch1_slice": "",
-      "ilconcat_0": "",
-      "ilconstant_0": "",
       "ZmodAWGController_0": "",
       "sawtooth_ramp_gen_0": "",
       "ilconstant_1": "",
       "ilconstant_2": "",
-      "ilconstant_3": ""
+      "ilconstant_3": "",
+      "ilconstant_4": ""
     },
     "interface_ports": {
       "DDR": {
@@ -281,8 +274,24 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "125000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -296,8 +305,24 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_ZmodDcoClk_0",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "40000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -348,15 +373,6 @@
       "sZmodRelayComL_0": {
         "direction": "O"
       },
-      "reset_rtl": {
-        "type": "rst",
-        "direction": "I",
-        "parameters": {
-          "POLARITY": {
-            "value": "ACTIVE_HIGH"
-          }
-        }
-      },
       "sZmodDAC_CS_0": {
         "direction": "O"
       },
@@ -368,15 +384,69 @@
       },
       "sZmodDAC_Reset_0": {
         "type": "rst",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
       "ZmodDAC_ClkIO_0": {
         "type": "clk",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_ZmodAWGController_0_0_ZmodDAC_ClkIO",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
       },
       "ZmodDAC_ClkIn_0": {
         "type": "clk",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_ZmodAWGController_0_0_ZmodDAC_ClkIn",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
       },
       "dZmodDAC_Data_0": {
         "direction": "O",
@@ -2215,10 +2285,10 @@
             "value": "80.0"
           },
           "CLKOUT1_JITTER": {
-            "value": "321.613"
+            "value": "265.121"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "40"
+            "value": "100"
           },
           "CLKOUT2_JITTER": {
             "value": "265.121"
@@ -2233,10 +2303,10 @@
             "value": "true"
           },
           "CLKOUT3_JITTER": {
-            "value": "242.716"
+            "value": "208.542"
           },
           "CLKOUT3_REQUESTED_OUT_FREQ": {
-            "value": "160"
+            "value": "400"
           },
           "CLKOUT3_REQUESTED_PHASE": {
             "value": "90"
@@ -2257,7 +2327,7 @@
             "value": "true"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "20.000"
+            "value": "8.000"
           },
           "MMCM_CLKOUT1_DIVIDE": {
             "value": "8"
@@ -2266,7 +2336,10 @@
             "value": "0.000"
           },
           "MMCM_CLKOUT2_DIVIDE": {
-            "value": "5"
+            "value": "2"
+          },
+          "MMCM_CLKOUT2_PHASE": {
+            "value": "90.000"
           },
           "MMCM_CLKOUT3_DIVIDE": {
             "value": "8"
@@ -2350,7 +2423,7 @@
             "value": "0"
           },
           "M_HAS_TLAST": {
-            "value": "0"
+            "value": "1"
           },
           "M_HAS_TREADY": {
             "value": "1"
@@ -3683,151 +3756,6 @@
           }
         }
       },
-      "c_counter_binary_0": {
-        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
-        "ip_revision": "22",
-        "xci_name": "design_1_c_counter_binary_0_0",
-        "xci_path": "ip\\design_1_c_counter_binary_0_0\\design_1_c_counter_binary_0_0.xci",
-        "inst_hier_path": "c_counter_binary_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "CE": {
-            "value": "true"
-          },
-          "Load": {
-            "value": "false"
-          },
-          "Output_Width": {
-            "value": "10"
-          },
-          "SCLR": {
-            "value": "false"
-          },
-          "Sync_Threshold_Output": {
-            "value": "true"
-          },
-          "Threshold_Value": {
-            "value": "3FF"
-          }
-        }
-      },
-      "win_rom_0": {
-        "vlnv": "xilinx.com:ip:dist_mem_gen:8.0",
-        "ip_revision": "17",
-        "xci_name": "design_1_dist_mem_gen_0_0",
-        "xci_path": "ip\\design_1_dist_mem_gen_0_0\\design_1_dist_mem_gen_0_0.xci",
-        "inst_hier_path": "win_rom_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "coefficient_file": {
-            "value": "../../../../../../Coefficient_Files/hanning_1024.coe"
-          },
-          "depth": {
-            "value": "1024"
-          },
-          "memory_type": {
-            "value": "rom"
-          }
-        }
-      },
-      "mult_gen_0": {
-        "vlnv": "xilinx.com:ip:mult_gen:12.0",
-        "ip_revision": "24",
-        "xci_name": "design_1_mult_gen_0_0",
-        "xci_path": "ip\\design_1_mult_gen_0_0\\design_1_mult_gen_0_0.xci",
-        "inst_hier_path": "mult_gen_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "Multiplier_Construction": {
-            "value": "Use_Mults"
-          },
-          "PipeStages": {
-            "value": "2"
-          },
-          "PortAWidth": {
-            "value": "16"
-          },
-          "PortBWidth": {
-            "value": "16"
-          }
-        }
-      },
-      "win_slice_0": {
-        "vlnv": "xilinx.com:inline_hdl:ilslice:1.0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "30"
-          },
-          "DIN_TO": {
-            "value": "15"
-          }
-        }
-      },
-      "sr_tvalid": {
-        "vlnv": "xilinx.com:ip:c_shift_ram:12.0",
-        "ip_revision": "20",
-        "xci_name": "design_1_c_shift_ram_1_0",
-        "xci_path": "ip\\design_1_c_shift_ram_1_0\\design_1_c_shift_ram_1_0.xci",
-        "inst_hier_path": "sr_tvalid",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "Depth": {
-            "value": "2"
-          },
-          "Width": {
-            "value": "1"
-          }
-        }
-      },
-      "sr_tlast": {
-        "vlnv": "xilinx.com:ip:c_shift_ram:12.0",
-        "ip_revision": "20",
-        "xci_name": "design_1_c_shift_ram_0_1",
-        "xci_path": "ip\\design_1_c_shift_ram_0_1\\design_1_c_shift_ram_0_1.xci",
-        "inst_hier_path": "sr_tlast",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "Depth": {
-            "value": "2"
-          },
-          "Width": {
-            "value": "1"
-          }
-        }
-      },
-      "adc_ch1_slice": {
-        "vlnv": "xilinx.com:inline_hdl:ilslice:1.0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "31"
-          },
-          "DIN_TO": {
-            "value": "16"
-          }
-        }
-      },
-      "ilconcat_0": {
-        "vlnv": "xilinx.com:inline_hdl:ilconcat:1.0",
-        "parameters": {
-          "IN0_WIDTH": {
-            "value": "16"
-          },
-          "IN1_WIDTH": {
-            "value": "16"
-          }
-        }
-      },
-      "ilconstant_0": {
-        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0",
-        "parameters": {
-          "CONST_VAL": {
-            "value": "0"
-          },
-          "CONST_WIDTH": {
-            "value": "16"
-          }
-        }
-      },
       "ZmodAWGController_0": {
         "vlnv": "digilent.com:user:ZmodAWGController:1.1",
         "ip_revision": "4",
@@ -3995,6 +3923,14 @@
       },
       "ilconstant_3": {
         "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0"
+      },
+      "ilconstant_4": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -4034,6 +3970,12 @@
           "axi_dma_0/S_AXIS_S2MM"
         ]
       },
+      "axis_subset_converter_0_M_AXIS": {
+        "interface_ports": [
+          "axis_subset_converter_0/M_AXIS",
+          "xfft_range/S_AXIS_DATA"
+        ]
+      },
       "processing_system7_0_DDR": {
         "interface_ports": [
           "DDR",
@@ -4066,8 +4008,8 @@
       },
       "ps7_0_axi_periph_M03_AXI": {
         "interface_ports": [
-          "ps7_0_axi_periph/M03_AXI",
-          "axi_gpio_1/S_AXI"
+          "axi_gpio_1/S_AXI",
+          "ps7_0_axi_periph/M03_AXI"
         ]
       },
       "sawtooth_ramp_gen_0_m_axis": {
@@ -4246,37 +4188,6 @@
           "ZmodADC_Controller_0/ZmodDcoClk"
         ]
       },
-      "adc_ch1_slice_Dout": {
-        "ports": [
-          "adc_ch1_slice/Dout",
-          "mult_gen_0/A"
-        ]
-      },
-      "axis_subset_converter_0_m_axis_tdata": {
-        "ports": [
-          "axis_subset_converter_0/m_axis_tdata",
-          "adc_ch1_slice/Din"
-        ]
-      },
-      "axis_subset_converter_0_m_axis_tvalid": {
-        "ports": [
-          "axis_subset_converter_0/m_axis_tvalid",
-          "sr_tvalid/D",
-          "c_counter_binary_0/CE"
-        ]
-      },
-      "c_counter_binary_0_Q": {
-        "ports": [
-          "c_counter_binary_0/Q",
-          "win_rom_0/a"
-        ]
-      },
-      "c_counter_binary_0_THRESH0": {
-        "ports": [
-          "c_counter_binary_0/THRESH0",
-          "sr_tlast/D"
-        ]
-      },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
@@ -4284,10 +4195,6 @@
           "axis_subset_converter_0/aclk",
           "xfft_range/aclk",
           "axis_data_fifo_0/s_axis_aclk",
-          "c_counter_binary_0/CLK",
-          "mult_gen_0/CLK",
-          "sr_tvalid/CLK",
-          "sr_tlast/CLK",
           "ZmodADC_Controller_0/ADC_SamplingClk",
           "ZmodADC_Controller_0/SysClk100"
         ]
@@ -4315,7 +4222,8 @@
       "clk_wiz_0_locked": {
         "ports": [
           "clk_wiz_0/locked",
-          "rst_clk_wiz_40M/dcm_locked"
+          "rst_clk_wiz_40M/dcm_locked",
+          "rst_ps7_0_100M/dcm_locked"
         ]
       },
       "const_adc_en_dout": {
@@ -4336,12 +4244,6 @@
           "ZmodADC_Controller_0/dZmodADC_Data"
         ]
       },
-      "dist_mem_gen_0_spo": {
-        "ports": [
-          "win_rom_0/spo",
-          "mult_gen_0/B"
-        ]
-      },
       "fft_config_const_dout": {
         "ports": [
           "fft_config_const/dout",
@@ -4352,18 +4254,6 @@
         "ports": [
           "fft_config_valid/dout",
           "xfft_range/s_axis_config_tvalid"
-        ]
-      },
-      "ilconcat_0_dout": {
-        "ports": [
-          "ilconcat_0/dout",
-          "xfft_range/s_axis_data_tdata"
-        ]
-      },
-      "ilconstant_0_dout": {
-        "ports": [
-          "ilconstant_0/dout",
-          "ilconcat_0/In1"
         ]
       },
       "ilconstant_1_dout": {
@@ -4384,10 +4274,10 @@
           "ZmodAWGController_0/sDAC_EnIn"
         ]
       },
-      "mult_gen_0_P": {
+      "ilconstant_4_dout": {
         "ports": [
-          "mult_gen_0/P",
-          "win_slice_0/Din"
+          "ilconstant_4/dout",
+          "clk_wiz_0/reset"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
@@ -4419,12 +4309,6 @@
           "rst_clk_wiz_40M/ext_reset_in"
         ]
       },
-      "reset_rtl_1": {
-        "ports": [
-          "reset_rtl",
-          "clk_wiz_0/reset"
-        ]
-      },
       "rst_clk_wiz_40M_peripheral_aresetn": {
         "ports": [
           "rst_clk_wiz_40M/peripheral_aresetn",
@@ -4453,28 +4337,10 @@
           "ps7_0_axi_periph/M03_ARESETN"
         ]
       },
-      "sr_tlast_Q": {
-        "ports": [
-          "sr_tlast/Q",
-          "xfft_range/s_axis_data_tlast"
-        ]
-      },
-      "sr_tvalid_Q": {
-        "ports": [
-          "sr_tvalid/Q",
-          "xfft_range/s_axis_data_tvalid"
-        ]
-      },
       "sys_clock_1": {
         "ports": [
           "sys_clock",
           "clk_wiz_0/clk_in1"
-        ]
-      },
-      "win_slice_0_Dout": {
-        "ports": [
-          "win_slice_0/Dout",
-          "ilconcat_0/In0"
         ]
       }
     },

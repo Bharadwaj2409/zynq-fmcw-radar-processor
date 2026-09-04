@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.15)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/Freertos_lwip_echo_serverExample.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/UserConfig.cmake)
-set(APP_NAME app)
+set(APP_NAME app1)
 project(${APP_NAME})
 
 find_package(common)

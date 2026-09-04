@@ -442,8 +442,6 @@ int main_thread(void) {
     return 0;
 }
 
-
-
 int main(void) {
     Xil_ICacheEnable();
     Xil_DCacheEnable();

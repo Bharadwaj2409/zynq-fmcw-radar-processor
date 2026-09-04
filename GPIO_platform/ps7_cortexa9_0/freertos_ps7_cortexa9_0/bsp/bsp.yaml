@@ -496,7 +496,6 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
-  PmodGPIO_0: None
   axi_dma_0:
     driver: axidma
     ip_name: axi_dma

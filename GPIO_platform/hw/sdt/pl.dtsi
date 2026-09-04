@@ -4,7 +4,7 @@
 		compatible = "simple-bus";
 		#address-cells = <1>;
 		#size-cells = <1>;
-		firmware-name = "Hanning_Window.bit.bin";
+		firmware-name = "cool.bit.bin";
 		clocking0: clocking0 {
 			compatible = "xlnx,fclk";
 			assigned-clocks = <&clkc 15>;
@@ -20,17 +20,6 @@
 			reg = <0xF8008000 0x1000>;
 			#size-cells = <0>;
 			xlnx,afi-width = <0>;
-		};
-		PmodGPIO_0: PmodGPIO@40000000 {
-			compatible = "xlnx,PmodGPIO-1.0";
-			status = "okay";
-			clock-names = "s_axi_aclk";
-			xlnx,ip-name = "PmodGPIO";
-			xlnx,pmod = "Custom";
-			xlnx,edk-iptype = "PERIPHERAL";
-			reg = <0x40000000 0x1000>;
-			clocks = <&clkc 15>;
-			xlnx,name = "PmodGPIO_0";
 		};
 		axi_dma_0: dma@40400000 {
 			compatible = "xlnx,axi-dma-7.1" , "xlnx,axi-dma-1.00.a";
