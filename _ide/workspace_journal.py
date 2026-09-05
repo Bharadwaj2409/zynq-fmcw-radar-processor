@@ -1,106 +1,83 @@
-# 2026-09-04T15:31:16.144544800
+# 2026-09-05T09:08:20.170818400
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="zynq-fmcw-radar-processor")
 
-client.delete_component(name="app")
+comp = client.create_app_component(name="Vtune_Rx",platform = "$COMPONENT_LOCATION/../GPIO_platform/export/GPIO_platform/GPIO_platform.xpfm",domain = "freertos_ps7_cortexa9_0",template = "freertos_lwip_echo_server")
 
-client.delete_component(name="componentName")
-
-client.delete_component(name="app1")
-
-client.delete_component(name="componentName")
+comp = client.get_component(name="Vtune_Rx")
+comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["m"])
 
 platform = client.get_component(name="GPIO_platform")
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../wraps.xsa")
-
 status = platform.build()
 
-comp = client.create_app_component(name="app",platform = "$COMPONENT_LOCATION/../GPIO_platform/export/GPIO_platform/GPIO_platform.xpfm",domain = "freertos_ps7_cortexa9_0",template = "freertos_lwip_echo_server")
-
-comp = client.get_component(name="app")
-comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["m"])
-
-status = platform.build()
-
-comp = client.get_component(name="app")
+comp = client.get_component(name="Vtune_Rx")
 comp.build()
 
-client.delete_component(name="app")
+client.delete_component(name="TxRx")
 
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../wrapio.xsa")
-
-status = platform.build()
-
-comp = client.create_app_component(name="app",platform = "$COMPONENT_LOCATION/../GPIO_platform/export/GPIO_platform/GPIO_platform.xpfm",domain = "freertos_ps7_cortexa9_0",template = "freertos_lwip_echo_server")
-
-comp = client.get_component(name="app")
-comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["m"])
+client.delete_component(name="componentName")
 
 status = platform.build()
 
-comp = client.get_component(name="app")
 comp.build()
 
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../wrapman.xsa")
+domain = platform.get_domain(name="freertos_ps7_cortexa9_0")
+
+status = domain.set_config(option = "lib", param = "lwip220_mem_size", value = "2097152", lib_name="lwip220")
+
+status = domain.regenerate()
 
 status = platform.build()
 
-comp = client.create_app_component(name="appio",platform = "$COMPONENT_LOCATION/../GPIO_platform/export/GPIO_platform/GPIO_platform.xpfm",domain = "freertos_ps7_cortexa9_0",template = "freertos_lwip_echo_server")
-
-comp = client.get_component(name="appio")
-comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["m"])
-
 status = platform.build()
 
-comp = client.get_component(name="appio")
-comp.build()
-
-client.delete_component(name="appio")
-
-client.delete_component(name="app")
-
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../newone.xsa")
-
-status = platform.build()
-
-comp = client.create_app_component(name="ttapp",platform = "$COMPONENT_LOCATION/../GPIO_platform/export/GPIO_platform/GPIO_platform.xpfm",domain = "freertos_ps7_cortexa9_0",template = "freertos_lwip_echo_server")
-
-comp = client.get_component(name="ttapp")
-comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["m"])
-
-status = platform.build()
-
-comp = client.get_component(name="ttapp")
-comp.build()
-
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../cool.xsa")
-
-status = platform.build()
-
-client.delete_component(name="ttapp")
-
-comp = client.create_app_component(name="app1",platform = "$COMPONENT_LOCATION/../GPIO_platform/export/GPIO_platform/GPIO_platform.xpfm",domain = "freertos_ps7_cortexa9_0",template = "freertos_lwip_echo_server")
-
-comp = client.get_component(name="app1")
-comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["m"])
-
-status = platform.build()
-
-comp = client.get_component(name="app1")
-comp.build()
-
-comp = client.clone_component(name="app1",new_name="TxRx")
-
-status = platform.build()
-
-comp = client.get_component(name="TxRx")
 comp.build()
 
 status = platform.build()
 
 comp.build()
 
-client.delete_component(name="app1")
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../FasterADC.xsa")
+
+status = platform.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = comp.clean()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
 

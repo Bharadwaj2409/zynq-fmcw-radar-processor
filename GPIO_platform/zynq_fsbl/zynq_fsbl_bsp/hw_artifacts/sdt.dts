@@ -1865,7 +1865,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
-                firmware-name = "cool.bit.bin";
+                firmware-name = "FasterADC.bit.bin";
 
                 clocking0: clocking0 {
                         phandle = <0x4f>;

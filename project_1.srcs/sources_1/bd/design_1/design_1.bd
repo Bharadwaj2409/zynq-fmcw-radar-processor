@@ -2375,7 +2375,7 @@
             "value": "false"
           },
           "kSamplingPeriod": {
-            "value": "25000"
+            "value": "8000"
           }
         }
       },

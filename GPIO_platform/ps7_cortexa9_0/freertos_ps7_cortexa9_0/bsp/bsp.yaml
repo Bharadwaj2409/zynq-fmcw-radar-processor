@@ -904,7 +904,7 @@ lib_config:
       name: lwip220_mem_size
       permission: read_write
       type: integer
-      value: '131072'
+      value: '2097152'
       default: '131072'
       options: []
       description: Size of the heap memory (bytes).

@@ -8,7 +8,7 @@
     "gen_directory": "../../../../../../project_1.gen/sources_1/bd/design_1/ip/design_1_ZmodADC_Controller_0_0_1",
     "parameters": {
       "component_parameters": {
-        "kSamplingPeriod": [ { "value": "25000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "kSamplingPeriod": [ { "value": "8000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "kADC_ClkDiv": [ { "value": "4", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "kADC_Width": [ { "value": "14", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "kExtRelayConfigEn": [ { "value": "false", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
@@ -32,7 +32,7 @@
         "kSimulation": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ]
       },
       "model_parameters": {
-        "kSamplingPeriod": [ { "value": "25000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "kSamplingPeriod": [ { "value": "8000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "kADC_ClkDiv": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "kADC_Width": [ { "value": "14", "resolve_type": "generated", "format": "long", "enabled": false, "usage": "all" } ],
         "kExtRelayConfigEn": [ { "value": "false", "resolve_type": "generated", "format": "bool", "usage": "all" } ],
@@ -226,5 +226,5 @@
       }
     }
   },
-  "checksum": "3745d8db"
+  "checksum": "f6e6da7f"
 }

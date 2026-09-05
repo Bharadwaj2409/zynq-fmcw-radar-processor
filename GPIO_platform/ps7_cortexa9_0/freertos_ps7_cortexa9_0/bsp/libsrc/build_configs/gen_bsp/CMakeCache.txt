@@ -663,7 +663,7 @@ lwip220_lwip_dhcp_does_acd_check:BOOL=ON
 lwip220_lwip_tcpip_core_locking_input:BOOL=OFF
 
 //Size of the heap memory (bytes).
-lwip220_mem_size:STRING=131072
+lwip220_mem_size:STRING=2097152
 
 //Number of memp struct pbufs. Set this high if application sends
 // lot of data out of ROM
